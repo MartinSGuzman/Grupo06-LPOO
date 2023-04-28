@@ -35,5 +35,11 @@ namespace ClasesBase
             get { return Usu_ApellidoNombre; }
             set { Usu_ApellidoNombre = value; }
         }
+        public Usuario(string username, string password)
+        {
+            Usu_NombreUsuario1 = username;
+            Usu_Contraseña1 = password;
+        }
+
     }
 }
