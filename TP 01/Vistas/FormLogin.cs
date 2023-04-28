@@ -46,7 +46,7 @@ namespace Vistas
             }
             else 
             {
-                MessageBox.Show("Error usuario o contra invalido");
+                MessageBox.Show("Error usuario o contra invalidooo");
             }
         }
 
