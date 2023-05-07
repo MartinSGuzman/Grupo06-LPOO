@@ -11,6 +11,7 @@ namespace Vistas
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        //desde minet
         static void Main()
         {
             Application.EnableVisualStyles();
