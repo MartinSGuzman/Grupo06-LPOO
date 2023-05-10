@@ -1,0 +1,13 @@
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormLogin.resources
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\bin\Debug\Vistas.exe
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\bin\Debug\ClaseBase.dll
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\bin\Debug\ClaseBase.pdb
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormMain.resources
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormGestionUsuarios.resources
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormGestionClientes.resources
