@@ -11,3 +11,4 @@ C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vi
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormMain.resources
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormGestionUsuarios.resources
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormGestionClientes.resources
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormGestionVentas.resources
