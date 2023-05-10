@@ -28,3 +28,5 @@ C:\Users\admin\Desktop\TP 01\Vistas\bin\Debug\Vistas.pdb
 C:\Users\admin\Desktop\TP 01\Vistas\bin\Debug\ClasesBase.dll
 C:\Users\admin\Desktop\TP 01\Vistas\bin\Debug\ClasesBase.pdb
 C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 01\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 01\Vistas\obj\x86\Debug\Vistas.pdb
