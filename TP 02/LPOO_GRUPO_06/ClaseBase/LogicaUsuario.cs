@@ -56,5 +56,7 @@ namespace ClaseBase
             adapter.Fill(datatable);
             return datatable;
         }
+
+       
     }
 }

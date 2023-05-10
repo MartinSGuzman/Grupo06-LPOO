@@ -22,7 +22,19 @@ namespace ClaseBase
             dadapter.Fill(datatable);
             return datatable;
         }
+        public static DataTable list_customerBox() {
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Select name from Cliente";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
 
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataTable datatable = new DataTable();
+
+            dadapter.Fill(datatable);
+            return datatable;
+        }
         public static void save_customer(Cliente client)
         {
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
@@ -40,6 +52,34 @@ namespace ClaseBase
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
+        }
+        public static Cliente find_customer(string dni)
+        {
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "select * from Cliente where id like @id ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@id", "%" + dni + "%");
+            Cliente found = new Cliente();
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            dadapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                found.Dni = row["dni"].ToString();
+                found.Address = row["address"].ToString();
+                found.Carnet_number = row["carnet_number"].ToString();
+                found.Name = row["name"].ToString();
+                found.Lastname = row["lastname"].ToString();
+                found.Os_cuit = row["os_cuit"].ToString();
+            }
+            else {
+                Console.WriteLine("No encontro chaval");
+            }
+            return found;
         }
     }
 }
