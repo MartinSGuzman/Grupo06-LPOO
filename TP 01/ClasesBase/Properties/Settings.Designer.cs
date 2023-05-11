@@ -25,13 +25,10 @@ namespace ClasesBase.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"C:\\Users\\User\\Documents\\Grupo06-LPOO\\T" +
-            "P 01\\pasteleria.mdf\";Integrated Security=True;Connect Timeout=30;User Instance=T" +
-            "rue")]
-        public string pasteleriaConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool pasteleriaConnectionString {
             get {
-                return ((string)(this["pasteleriaConnectionString"]));
+                return ((bool)(this["pasteleriaConnectionString"]));
             }
         }
         

@@ -26,11 +26,11 @@ namespace Vistas
             string Usuario = usrName.Text;
             string PassIngresada = passLogin.Text;
 
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
 
             cnn.Open();
          
-            string query = "SELECT COUNT(*) FROM Usuario WHERE usr_username = @nombreUsuario AND usr_password = @contraseña";
+            string query = "SELECT COUNT(*) FROM Usuario WHERE usu_NombreUsuario = @nombreUsuario AND usu_Contraseña = @contraseña";
             
             SqlCommand cmd = new SqlCommand(query, cnn);
 
@@ -46,7 +46,7 @@ namespace Vistas
             }
             else 
             {
-                MessageBox.Show("Error usuario o contra invalidooo");
+                MessageBox.Show("Error usuario o contra invalido");
             }
         }
 
@@ -54,6 +54,7 @@ namespace Vistas
         {
 
         }
+
 
      
 

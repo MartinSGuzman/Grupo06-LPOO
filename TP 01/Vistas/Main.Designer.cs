@@ -112,7 +112,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtUsuario.TabIndex = 10;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // ContraIn
             // 
@@ -140,6 +139,7 @@
             this.txtUsu_ApellidoNombre1.Size = new System.Drawing.Size(121, 20);
             this.txtUsu_ApellidoNombre1.TabIndex = 3;
             this.txtUsu_ApellidoNombre1.TabStop = false;
+            this.txtUsu_ApellidoNombre1.TextChanged += new System.EventHandler(this.txtUsu_ApellidoNombre1_TextChanged);
             // 
             // dgwUsuarios
             // 
@@ -165,7 +165,6 @@
             this.txtPattern.Size = new System.Drawing.Size(457, 20);
             this.txtPattern.TabIndex = 6;
             this.txtPattern.TabStop = false;
-            this.txtPattern.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Main
             // 
