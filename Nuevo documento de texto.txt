@@ -1,0 +1,21 @@
+public static DataTable exec_eliminar_usuario(int ID)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "eliminar_usuario_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@usu_ID", ID);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+        }
