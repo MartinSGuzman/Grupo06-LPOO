@@ -11,3 +11,9 @@ C:\Users\admin\Desktop\TP 01\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\admin\Desktop\TP 01\ClasesBase\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\admin\Desktop\TP 01\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\admin\Desktop\TP 01\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\ClasesBase\obj\Debug\ClasesBase.pdb

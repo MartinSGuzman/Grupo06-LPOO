@@ -60,6 +60,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pasteleriaDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="pasteleriaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pasteleriaDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -94,6 +99,17 @@
     </None>
     <None Include="pasteleriaDataSet1.xss">
       <DependentUpon>pasteleriaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pasteleriaDataSet2.xsc">
+      <DependentUpon>pasteleriaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pasteleriaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pasteleriaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pasteleriaDataSet2.xss">
+      <DependentUpon>pasteleriaDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
