@@ -52,7 +52,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText =  "listar_usuarios_sp";
+            cmd.CommandText = "listar_usuarios_sp";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
@@ -69,13 +69,13 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "search_usuario";
+            cmd.CommandText = "search_usuarios";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.CommandType = CommandType.Text;
+
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@pattern", "%"+sPattern+"%");
+            cmd.Parameters.AddWithValue("@pattern", "%" + sPattern + "%");
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -84,7 +84,25 @@ namespace ClasesBase
 
             return dt;
         }
-          
+
+
+        public static void exec_eliminar_usuario(int ID)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "eliminar_usuario_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@usu_ID", ID);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
     }
- }
+}
   

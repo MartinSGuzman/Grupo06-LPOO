@@ -70,7 +70,7 @@ namespace Vistas
         }
 
         
-        private void dgwUsuarios_CellClick(object sender, EventArgs e)
+        private void dgwUsuarios_CurrentCellChanged(object sender, EventArgs e)
         {
             MessageBox.Show("No ai");
             if (dgwUsuarios.CurrentRow != null)
@@ -92,6 +92,49 @@ namespace Vistas
         {
 
         }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+           
+            if (txtPattern.Text != "")
+            {
+                dgwUsuarios.DataSource = LogicaUsuario.exec_search_usuarios(txtPattern.Text);
+
+            }
+            else
+            {
+                load_usuarios();
+            }
+        }
+        private void dgwUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (dgwUsuarios.CurrentRow != null)
+            {
+                cmbRol_Id.SelectedValue = dgwUsuarios.CurrentRow.Cells["Rol"].Value.ToString();
+                txtUsu_ApellidoNombre1.Text = dgwUsuarios.CurrentRow.Cells["ApellidoNombre"].Value.ToString();
+                txtUsuario.Text = dgwUsuarios.CurrentRow.Cells["NombreUsuario"].Value.ToString();
+                txtContraseña.Text = dgwUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
+                btnEliminar.Visible = true;
+            }
+        
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+           
+            int ID = int.Parse(dgwUsuarios.CurrentRow.Cells["ID"].Value.ToString());
+            LogicaUsuario.exec_eliminar_usuario(ID);
+            load_usuarios();
+
+  
+            txtUsu_ApellidoNombre1.Text = "";
+            txtUsuario.Text = "";
+            txtContraseña.Text = "";
+        }
+
+       
 
        
 
