@@ -116,6 +116,8 @@ namespace Vistas
                 txtUsuario.Text = dgwUsuarios.CurrentRow.Cells["NombreUsuario"].Value.ToString();
                 txtContraseña.Text = dgwUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
                 btnEliminar.Visible = true;
+                SaveUser.Visible = false;
+                btnModificar.Visible = true;
             }
         
 
@@ -132,6 +134,39 @@ namespace Vistas
             txtUsu_ApellidoNombre1.Text = "";
             txtUsuario.Text = "";
             txtContraseña.Text = "";
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            int ID = int.Parse(dgwUsuarios.CurrentRow.Cells["ID"].Value.ToString());
+
+            LogicaUsuario.exec_modificar_usuario(ID, txtUsu_ApellidoNombre1.Text, txtUsuario.Text, txtContraseña.Text, (int)cmbRol_Id.SelectedValue);
+            load_usuarios();
+
+
+            txtUsu_ApellidoNombre1.Text = "";
+            txtUsuario.Text = "";
+            txtContraseña.Text = "";
+        }
+
+        private void txtPattern_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Clientes cliente = new Clientes();
+            cliente.Show();
+           
         }
 
        

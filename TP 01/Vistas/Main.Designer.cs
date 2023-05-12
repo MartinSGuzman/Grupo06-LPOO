@@ -32,6 +32,7 @@
             this.RolIn = new System.Windows.Forms.Label();
             this.ApellidoIn = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SaveUser = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -41,7 +42,8 @@
             this.dgwUsuarios = new System.Windows.Forms.DataGridView();
             this.txtPattern = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +76,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.SaveUser);
             this.groupBox1.Controls.Add(this.txtContraseña);
@@ -84,16 +87,27 @@
             this.groupBox1.Controls.Add(this.ApellidoIn);
             this.groupBox1.Controls.Add(this.RolIn);
             this.groupBox1.Controls.Add(this.cmbRol_Id);
-            this.groupBox1.Location = new System.Drawing.Point(517, 49);
+            this.groupBox1.Location = new System.Drawing.Point(523, 81);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(274, 335);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Usuario";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(25, 256);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // SaveUser
             // 
-            this.SaveUser.Location = new System.Drawing.Point(181, 256);
+            this.SaveUser.Location = new System.Drawing.Point(193, 256);
             this.SaveUser.Name = "SaveUser";
             this.SaveUser.Size = new System.Drawing.Size(75, 23);
             this.SaveUser.TabIndex = 12;
@@ -146,7 +160,7 @@
             // dgwUsuarios
             // 
             this.dgwUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwUsuarios.Location = new System.Drawing.Point(22, 63);
+            this.dgwUsuarios.Location = new System.Drawing.Point(22, 81);
             this.dgwUsuarios.Name = "dgwUsuarios";
             this.dgwUsuarios.Size = new System.Drawing.Size(489, 303);
             this.dgwUsuarios.TabIndex = 4;
@@ -154,15 +168,16 @@
             // 
             // txtPattern
             // 
-            this.txtPattern.Location = new System.Drawing.Point(42, 16);
+            this.txtPattern.Location = new System.Drawing.Point(22, 46);
             this.txtPattern.Name = "txtPattern";
             this.txtPattern.Size = new System.Drawing.Size(457, 20);
             this.txtPattern.TabIndex = 6;
             this.txtPattern.TabStop = false;
+            this.txtPattern.TextChanged += new System.EventHandler(this.txtPattern_TextChanged);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(530, 12);
+            this.btnSearch.Location = new System.Drawing.Point(523, 46);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 7;
@@ -170,22 +185,35 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
-            // btnEliminar
+            // btnModificar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(67, 256);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 13;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnModificar.Location = new System.Drawing.Point(112, 256);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.Location = new System.Drawing.Point(22, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Consulta Clientes";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 490);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtPattern);
             this.Controls.Add(this.dgwUsuarios);
@@ -216,6 +244,8 @@
         private System.Windows.Forms.TextBox txtPattern;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button button1;
 
     }
 }

@@ -103,6 +103,28 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+
+        public static void exec_modificar_usuario(int ID, string nombre, string usuario, string contra, int rol)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "modificar_usuario_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@usu_ID", ID);
+            cmd.Parameters.AddWithValue("@nuevo_nombre", nombre);
+            cmd.Parameters.AddWithValue("@nuevo_contraseña", contra);
+            cmd.Parameters.AddWithValue("@nuevo_usuario", usuario);
+            cmd.Parameters.AddWithValue("@nuevo_rol", rol);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
     }
 }
   

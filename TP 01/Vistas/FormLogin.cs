@@ -41,8 +41,10 @@ namespace Vistas
 
             if (count != 0)
             {
+                this.Hide();
                 Main main = new Main();
                 main.Show();
+                
             }
             else 
             {
