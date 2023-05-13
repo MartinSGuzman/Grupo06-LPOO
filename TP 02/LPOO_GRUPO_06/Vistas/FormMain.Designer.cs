@@ -33,6 +33,9 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +53,7 @@
             // 
             this.menuStrip1.Location = new System.Drawing.Point(0, 33);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(866, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(989, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,10 +61,12 @@
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionToolStripMenuItem,
-            this.gestionClientesToolStripMenuItem});
+            this.gestionClientesToolStripMenuItem,
+            this.gestionProductosToolStripMenuItem,
+            this.gestionVentasToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(866, 33);
+            this.menuStrip2.Size = new System.Drawing.Size(989, 33);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -79,17 +84,42 @@
             this.gestionClientesToolStripMenuItem.Text = "Gestion Clientes";
             this.gestionClientesToolStripMenuItem.Click += new System.EventHandler(this.formGestion);
             // 
+            // gestionProductosToolStripMenuItem
+            // 
+            this.gestionProductosToolStripMenuItem.Name = "gestionProductosToolStripMenuItem";
+            this.gestionProductosToolStripMenuItem.Size = new System.Drawing.Size(170, 29);
+            this.gestionProductosToolStripMenuItem.Text = "Gestion Productos";
+            // 
+            // gestionVentasToolStripMenuItem
+            // 
+            this.gestionVentasToolStripMenuItem.Name = "gestionVentasToolStripMenuItem";
+            this.gestionVentasToolStripMenuItem.Size = new System.Drawing.Size(141, 29);
+            this.gestionVentasToolStripMenuItem.Text = "Gestion Ventas";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(798, 395);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 46);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.handle_singout);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 355);
+            this.ClientSize = new System.Drawing.Size(989, 453);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.Click += new System.EventHandler(this.handle_singout);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -104,5 +134,8 @@
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem gestionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionVentasToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

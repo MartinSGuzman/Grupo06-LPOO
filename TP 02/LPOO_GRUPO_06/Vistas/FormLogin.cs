@@ -30,10 +30,10 @@ namespace Vistas
 
             Console.WriteLine("username ingresado: "+username);
             Console.WriteLine("password ingresado: "+password);
-            int user = LogicaLogin.handle_login(username, password);
+            Usuario user = LogicaLogin.handle_login(username, password);
 
-            if( user == 1 ){
-                FormMain frmMain = new FormMain();
+            if( user != null  ){
+                FormMain frmMain = new FormMain(user.Rol_id);
                 frmMain.Show();
             }else{
                 MessageBox.Show("Datos Incorrectos!");

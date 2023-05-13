@@ -44,6 +44,11 @@
             this.dateBox = new System.Windows.Forms.DateTimePicker();
             this.priceBox = new System.Windows.Forms.NumericUpDown();
             this.ventaDataGridView = new System.Windows.Forms.DataGridView();
+            this.filterCustomerBox = new System.Windows.Forms.ComboBox();
+            this.dateBox1 = new System.Windows.Forms.DateTimePicker();
+            this.dateBox2 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cantBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaDataGridView)).BeginInit();
@@ -183,17 +188,66 @@
             // ventaDataGridView
             // 
             this.ventaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ventaDataGridView.Location = new System.Drawing.Point(9, 41);
+            this.ventaDataGridView.Location = new System.Drawing.Point(9, 103);
             this.ventaDataGridView.Name = "ventaDataGridView";
             this.ventaDataGridView.RowTemplate.Height = 28;
-            this.ventaDataGridView.Size = new System.Drawing.Size(603, 376);
+            this.ventaDataGridView.Size = new System.Drawing.Size(603, 314);
             this.ventaDataGridView.TabIndex = 21;
+            // 
+            // filterCustomerBox
+            // 
+            this.filterCustomerBox.FormattingEnabled = true;
+            this.filterCustomerBox.Location = new System.Drawing.Point(9, 50);
+            this.filterCustomerBox.Name = "filterCustomerBox";
+            this.filterCustomerBox.Size = new System.Drawing.Size(226, 28);
+            this.filterCustomerBox.TabIndex = 22;
+            this.filterCustomerBox.SelectedIndexChanged += new System.EventHandler(this.filterByCustomer);
+            // 
+            // dateBox1
+            // 
+            this.dateBox1.Location = new System.Drawing.Point(372, 50);
+            this.dateBox1.Name = "dateBox1";
+            this.dateBox1.Size = new System.Drawing.Size(92, 26);
+            this.dateBox1.TabIndex = 23;
+            this.dateBox1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dateBox2
+            // 
+            this.dateBox2.Location = new System.Drawing.Point(470, 50);
+            this.dateBox2.Name = "dateBox2";
+            this.dateBox2.Size = new System.Drawing.Size(92, 26);
+            this.dateBox2.TabIndex = 24;
+            this.dateBox2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(59, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 20);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Filtrar por Cliente";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(392, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 29);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Filtrar por fecha";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.filterByDate);
             // 
             // FormGestionVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 443);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dateBox2);
+            this.Controls.Add(this.dateBox1);
+            this.Controls.Add(this.filterCustomerBox);
             this.Controls.Add(this.ventaDataGridView);
             this.Controls.Add(this.priceBox);
             this.Controls.Add(this.dateBox);
@@ -239,5 +293,10 @@
         private System.Windows.Forms.DateTimePicker dateBox;
         private System.Windows.Forms.NumericUpDown priceBox;
         private System.Windows.Forms.DataGridView ventaDataGridView;
+        private System.Windows.Forms.ComboBox filterCustomerBox;
+        private System.Windows.Forms.DateTimePicker dateBox1;
+        private System.Windows.Forms.DateTimePicker dateBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button2;
     }
 }
