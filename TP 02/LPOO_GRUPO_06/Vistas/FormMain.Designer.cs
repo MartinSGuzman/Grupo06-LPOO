@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionUsuarioMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +60,7 @@
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionToolStripMenuItem,
+            this.gestionUsuarioMenuStrip,
             this.gestionClientesToolStripMenuItem,
             this.gestionProductosToolStripMenuItem,
             this.gestionVentasToolStripMenuItem});
@@ -70,12 +70,12 @@
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // gestionToolStripMenuItem
+            // gestionUsuarioMenuStrip
             // 
-            this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
-            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(180, 29);
-            this.gestionToolStripMenuItem.Text = "Gestion de usuarios";
-            this.gestionToolStripMenuItem.Click += new System.EventHandler(this.gestionToolStripMenuItem_Click);
+            this.gestionUsuarioMenuStrip.Name = "gestionUsuarioMenuStrip";
+            this.gestionUsuarioMenuStrip.Size = new System.Drawing.Size(180, 29);
+            this.gestionUsuarioMenuStrip.Text = "Gestion de usuarios";
+            this.gestionUsuarioMenuStrip.Click += new System.EventHandler(this.gestionToolStripMenuItem_Click);
             // 
             // gestionClientesToolStripMenuItem
             // 
@@ -89,12 +89,14 @@
             this.gestionProductosToolStripMenuItem.Name = "gestionProductosToolStripMenuItem";
             this.gestionProductosToolStripMenuItem.Size = new System.Drawing.Size(170, 29);
             this.gestionProductosToolStripMenuItem.Text = "Gestion Productos";
+            this.gestionProductosToolStripMenuItem.Click += new System.EventHandler(this.gestionProductosToolStripMenuItem_Click);
             // 
             // gestionVentasToolStripMenuItem
             // 
             this.gestionVentasToolStripMenuItem.Name = "gestionVentasToolStripMenuItem";
             this.gestionVentasToolStripMenuItem.Size = new System.Drawing.Size(141, 29);
             this.gestionVentasToolStripMenuItem.Text = "Gestion Ventas";
+            this.gestionVentasToolStripMenuItem.Click += new System.EventHandler(this.gestionVentasToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -132,7 +134,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem gestionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionUsuarioMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem gestionClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionVentasToolStripMenuItem;

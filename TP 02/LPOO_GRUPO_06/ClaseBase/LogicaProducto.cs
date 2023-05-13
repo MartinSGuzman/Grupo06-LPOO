@@ -12,12 +12,17 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "select category from Producto";
+            cmd.CommandText = "INSERT INTO Producto(key_product, category, description, price) values(@keyProductBox, @categoriesBox, @descripcionBox, @priceBox)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@keyProductBox", newp.Key_product);
+            cmd.Parameters.AddWithValue("@categoriesBox", newp.Category);
+            cmd.Parameters.AddWithValue("@descripcionBox", newp.Description);
+            cmd.Parameters.AddWithValue("@priceBox", newp.Price);
 
-            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
 
         }
         public static DataTable list_categories() {
