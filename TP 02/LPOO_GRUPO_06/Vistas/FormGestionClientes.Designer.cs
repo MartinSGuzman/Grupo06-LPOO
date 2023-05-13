@@ -42,6 +42,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.customerDataGrid = new System.Windows.Forms.DataGridView();
+            this.lastnamerBox = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,17 +156,41 @@
             // customerDataGrid
             // 
             this.customerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerDataGrid.Location = new System.Drawing.Point(12, 33);
+            this.customerDataGrid.Location = new System.Drawing.Point(12, 60);
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.RowTemplate.Height = 28;
-            this.customerDataGrid.Size = new System.Drawing.Size(517, 357);
+            this.customerDataGrid.Size = new System.Drawing.Size(517, 330);
             this.customerDataGrid.TabIndex = 13;
+            // 
+            // lastnamerBox
+            // 
+            this.lastnamerBox.AutoSize = true;
+            this.lastnamerBox.Location = new System.Drawing.Point(135, 12);
+            this.lastnamerBox.Name = "lastnamerBox";
+            this.lastnamerBox.Size = new System.Drawing.Size(179, 24);
+            this.lastnamerBox.TabIndex = 15;
+            this.lastnamerBox.Text = "Ordenar por Apellido";
+            this.lastnamerBox.UseVisualStyleBackColor = true;
+            this.lastnamerBox.Click += new System.EventHandler(this.orderbylastname);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(12, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 24);
+            this.radioButton1.TabIndex = 16;
+            this.radioButton1.Text = "Limpiar";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Click += new System.EventHandler(this.FormGestionClientes_Load);
             // 
             // FormGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 406);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.lastnamerBox);
             this.Controls.Add(this.customerDataGrid);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
@@ -204,5 +230,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView customerDataGrid;
+        private System.Windows.Forms.RadioButton lastnamerBox;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

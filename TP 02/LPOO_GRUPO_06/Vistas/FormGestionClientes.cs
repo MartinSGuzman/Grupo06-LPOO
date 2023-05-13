@@ -38,6 +38,13 @@ namespace Vistas
             customerDataGrid.DataSource = LogicaCliente.list_customer();
         }
 
+        private void orderbylastname(object sender, EventArgs e)
+        {
+            customerDataGrid.DataSource = LogicaCliente.order_byLastName();
+            Console.WriteLine("cambia");
+            Console.WriteLine(lastnamerBox.Checked);
+        }
+
       
     }
 }

@@ -44,5 +44,35 @@ namespace ClaseBase
 
             cnn.Close();
         }
+        public static DataTable filter_by_customer(string category)
+        {
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "select date as 'Fecha', dni_customer as 'Cliente DNI' from Venta where dni_customer like @category";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@category",category);
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataTable datatable = new DataTable();
+
+            dadapter.Fill(datatable);
+            return datatable;
+        }
+
+        public static DataTable filter_byDate(DateTime date1, DateTime date2) {
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "GetSalesDateRange";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@StartDate", date1);
+            cmd.Parameters.AddWithValue("@EndDate", date2);
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataTable datatable = new DataTable();
+
+            dadapter.Fill(datatable);
+            return datatable;
+        }   
+
     }
 }

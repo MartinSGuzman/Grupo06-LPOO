@@ -81,5 +81,21 @@ namespace ClaseBase
             }
             return found;
         }
+
+        public static DataTable order_byLastName() {
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Select dni as 'DNI', name as 'Nombre', lastname as 'Apellido', address as 'Direccion', os_cuit as 'Obra Social CUIT', carnet_number as 'Numero de carnet' from Cliente order by lastname";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataTable datatable = new DataTable();
+
+            dadapter.Fill(datatable);
+            return datatable;
+        }
+
+        
     }
 }
