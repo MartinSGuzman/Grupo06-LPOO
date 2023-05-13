@@ -55,6 +55,15 @@ namespace Vistas
             //productsData.DataSource = LogicaProducto.list_products();
         }
 
+        private void handleSaveProduct() {
+            Producto pro = new Producto();
+            pro.Key_product = keyProductBox.Value.ToString();
+            pro.Category = categoriesBox.Text.ToString();
+            pro.Price = priceBox.Value;
+            pro.Description = DescripcionBox.Text;
+            LogicaProducto.save_product(pro);
+        }
+
 
     }
 }
