@@ -1,21 +1,16 @@
-public static DataTable exec_eliminar_usuario(int ID)
-        {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "eliminar_usuario_sp";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-
-            cmd.Connection = cnn;
-
-            cmd.Parameters.AddWithValue("@usu_ID", ID);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
-        }
-        }
+CREATE PROCEDURE dbo.listar_productos_sp
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	/* SET NOCOUNT ON */
+	SELECT
+            Prod_Codigo	as 'Codigo',
+			Prod_Categoria as 'Categoria',
+            Prod_Descripcion as 'Descripcion',
+			Prod_Precio 'Precio'
+            
+		 FROM Producto

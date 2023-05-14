@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="LogicaCliente.cs" />
+    <Compile Include="LogicaProducto.cs" />
     <Compile Include="LogicaUsuario.cs" />
     <Compile Include="ObraSocial.cs" />
     <Compile Include="pasteleriaDataSet.cs">

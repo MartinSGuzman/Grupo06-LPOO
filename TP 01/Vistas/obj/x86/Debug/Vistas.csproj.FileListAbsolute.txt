@@ -39,3 +39,4 @@ C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vi
 C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.Main.resources
 C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\Vistas.Clientes.resources
