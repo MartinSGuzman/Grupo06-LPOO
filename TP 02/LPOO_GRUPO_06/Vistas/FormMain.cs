@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using ClaseBase;
 namespace Vistas
 {
     public partial class FormMain : Form
@@ -68,7 +68,13 @@ namespace Vistas
 
         private void gestionVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormGestionVentas frmventas = new FormGestionVentas();
+            VentaReal newVenta = new VentaReal();
+            newVenta.Date = DateTime.Now;
+            newVenta.Dni_customer = 44645905.ToString();
+            int ventaId = LogicaVenta.save_venta(newVenta);
+            newVenta.Id = ventaId;
+            
+            FormGestionVentas frmventas = new FormGestionVentas(newVenta);
             frmventas.Show();
         }
     }

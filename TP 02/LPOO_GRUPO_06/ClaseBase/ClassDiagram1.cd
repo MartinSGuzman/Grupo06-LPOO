@@ -31,7 +31,7 @@
   <Class Name="ClaseBase.LogicaCliente">
     <Position X="2.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAFAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAAACFAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>LogicaCliente.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,7 +45,7 @@
   <Class Name="ClaseBase.LogicaProducto">
     <Position X="4" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAACAAAAEAAAAEAAAAAAAAAAAAAACQA=</HashCode>
       <FileName>LogicaProducto.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,15 +59,22 @@
   <Class Name="ClaseBase.Venta">
     <Position X="5.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAgDAEgIAQBAAAAgAAAAAAAAAAAAQAABAEAAAQAAAiA=</HashCode>
+      <HashCode>CAgDAEgIAQBAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAgA=</HashCode>
       <FileName>Venta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClaseBase.LogicaVenta">
-    <Position X="5.75" Y="5.25" Width="1.5" />
+    <Position X="5.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAABAAAAAAAAAgAAAAAAAAAAAAAAAACAAAAA=</HashCode>
       <FileName>LogicaVenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClaseBase.VentaReal">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAAAQAAAiA=</HashCode>
+      <FileName>VentaReal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -36,6 +36,7 @@
             this.gestionProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.verVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@
             this.gestionUsuarioMenuStrip,
             this.gestionClientesToolStripMenuItem,
             this.gestionProductosToolStripMenuItem,
-            this.gestionVentasToolStripMenuItem});
+            this.gestionVentasToolStripMenuItem,
+            this.verVentasToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(989, 33);
@@ -108,6 +110,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.handle_singout);
             // 
+            // verVentasToolStripMenuItem
+            // 
+            this.verVentasToolStripMenuItem.Name = "verVentasToolStripMenuItem";
+            this.verVentasToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
+            this.verVentasToolStripMenuItem.Text = "Ver Ventas";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -139,5 +147,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionVentasToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem verVentasToolStripMenuItem;
     }
 }

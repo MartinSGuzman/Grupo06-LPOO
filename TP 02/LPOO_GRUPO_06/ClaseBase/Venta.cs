@@ -14,23 +14,9 @@ namespace ClaseBase
             get { return id; }
             set { id = value; }
         }
-        private string dni_customer;
+        private int key_sale;
 
-        public string Dni_customer
-        {
-            get { return dni_customer; }
-            set { dni_customer = value; }
-        }
-        private DateTime date;
-
-        public DateTime Date
-        {
-            get { return date; }
-            set { date = value; }
-        }
-        private string key_sale;
-
-        public string Key_sale
+        public int Key_sale
         {
             get { return key_sale; }
             set { key_sale = value; }
@@ -50,9 +36,9 @@ namespace ClaseBase
             set { total = value; }
         }
 
-        private string key_product;
+        private int key_product;
 
-        public string Key_product
+        public int Key_product
         {
             get { return key_product; }
             set { key_product = value; }

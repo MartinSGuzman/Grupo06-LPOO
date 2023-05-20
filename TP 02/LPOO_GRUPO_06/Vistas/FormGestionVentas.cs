@@ -11,27 +11,37 @@ namespace Vistas
 {
     public partial class FormGestionVentas : Form
     {
+
         public FormGestionVentas()
         {
             InitializeComponent();
         }
+        private VentaReal ventareal;
 
+        public FormGestionVentas(VentaReal venta) {
+            InitializeComponent();
+            ventareal = venta;
+            Console.WriteLine("LO QUE VIENE EN EL CONSTRUCTOR: "+ventareal.Id);
+            //ventaDataGridView.DataSource = '';
+        }
         private void FormGestionVentas_Load(object sender, EventArgs e)
         {
             load_roles();
             load_customers();
             lst_products();
-            list_ventas();
+            Console.WriteLine("LO QUE VIENE EN EL CONSTRUCTOR: " + ventareal.Id);
+            //list_ventas();
         }
 
         private void list_ventas() {
-            ventaDataGridView.DataSource = LogicaVenta.list_ventas();
+            ventaDataGridView.DataSource = LogicaVenta.list_cart(ventareal.Id);
         }
         private void lst_products() {
             productsBox.DisplayMember = "description";
             productsBox.ValueMember = "id";
             productsBox.DataSource = LogicaProducto.list_productsBox();
         }
+
         private void load_roles(){
             obraSocialBox.DisplayMember = "os_razon";
             obraSocialBox.ValueMember = "id";
@@ -43,9 +53,9 @@ namespace Vistas
             clienteBox.ValueMember = "id";
             clienteBox.DataSource = LogicaCliente.list_customerBox();
 
-            filterCustomerBox.DisplayMember = "name";
-            filterCustomerBox.ValueMember = "id";
-            filterCustomerBox.DataSource = LogicaCliente.list_customerBox();
+            //filterCustomerBox.DisplayMember = "name";
+            //filterCustomerBox.ValueMember = "id";
+            //filterCustomerBox.DataSource = LogicaCliente.list_customerBox();
         }
 
         private void handle_selectedProduct(object sender, EventArgs e)
@@ -56,53 +66,72 @@ namespace Vistas
             Console.Write("Este es el resulltado" + data.ToString());
             if (data != null) 
             {   
-                priceBox.Value = data.Price;
                 codigoBox.Text = data.Key_product;
+                priceLabel.Text = data.Price.ToString();
             }
             else {
                 Console.WriteLine("NO SE ENCONTRO");
             }
         }
+        private decimal total = 0;
+
+        private void add_cart(object sender, EventArgs e)
+        {
+            int seleccionado = productsBox.SelectedIndex + 1;
+            
+            Console.Write("se selecciono" + seleccionado);
+            Producto data = LogicaProducto.find_product(seleccionado.ToString());
+
+            total += data.Price;
+
+            totalLabel.Text = total.ToString();
+            Console.WriteLine("TOTAL: " + total);
+            //se setea los datos del cliente y la fecha
+            clienteBox.Enabled = false;
+            obraSocialBox.Enabled = false;
+            dateBox.Enabled = false;
+
+
+            //SE GUARDA LA VENTA DETALLE
+            Venta ventaDetalle = new Venta();
+            ventaDetalle.Cant = cantBox.Value;
+            ventaDetalle.Key_product = seleccionado;
+            ventaDetalle.Key_sale = ventareal.Id;
+            ventaDetalle.Price = data.Price;
+            ventaDetalle.Total = data.Price * cantBox.Value;
+            LogicaVenta.save_ventaDetalle(ventaDetalle);
+            Console.WriteLine("se guarda venta detalle");
+            list_ventas();
+            
+        }
 
         private void handle_sell(object sender, EventArgs e)
         {
-
             Random rnd = new Random();
-            Venta vent = new Venta();
-            Console.WriteLine(cantBox.Value);
-            Console.WriteLine(dateBox.Value);
+            VentaReal vent = new VentaReal();
 
-            vent.Cant = cantBox.Value;
-            vent.Date = dateBox.Value;
-            int idp = productsBox.SelectedIndex + 1;
-            Producto pro = LogicaProducto.find_product(idp.ToString());
-            vent.Key_product = pro.Key_product;
-            vent.Price = pro.Price;
-            vent.Key_sale = rnd.Next(100000, 999999).ToString();
-            vent.Total = priceBox.Value * cantBox.Value;
             int id = clienteBox.SelectedIndex + 1;
             Cliente client = LogicaCliente.find_customer(id.ToString());
-            vent.Dni_customer = client.Dni;
-            Console.WriteLine("DNI DEL CLIENTE " + vent.Dni_customer + "y este es el BOX CLIENT " + clienteBox.SelectedIndex.ToString());
-            LogicaVenta.save_venta(vent);
-            list_ventas();
+            //vent.Dni_customer = client.Dni;
+            LogicaVenta.put_ventaDetalle(ventareal.Id, client.Dni.ToString());
+            //LogicaVenta.save_venta(vent);
         }
 
-        private void filterByCustomer(object sender, EventArgs e)
-        {
-           Console.WriteLine(filterCustomerBox.SelectedIndex);
-           int id = filterCustomerBox.SelectedIndex + 1;
-           Cliente client = LogicaCliente.find_customer(id.ToString());
-           ventaDataGridView.DataSource = LogicaVenta.filter_by_customer(client.Dni.ToString()); 
-        
-        }
-
-        private void filterByDate(object sender, EventArgs e)
-        {
-            Console.WriteLine(dateBox1.Value.ToString());
-            Console.WriteLine(dateBox2.Value.ToString());
-            ventaDataGridView.DataSource = LogicaVenta.filter_byDate(dateBox1.Value, dateBox2.Value);
-        }
+        //private void filterByCustomer(object sender, EventArgs e)
+        //{
+        //   Console.WriteLine(filterCustomerBox.SelectedIndex);
+        //   int id = filterCustomerBox.SelectedIndex + 1;
+        //   Cliente client = LogicaCliente.find_customer(id.ToString());
+        //   ventaDataGridView.DataSource = LogicaVenta.filter_by_customer(client.Dni.ToString()); 
+        //
+        //}
+        //
+        //private void filterByDate(object sender, EventArgs e)
+        //{
+        //    Console.WriteLine(dateBox1.Value.ToString());
+        //    Console.WriteLine(dateBox2.Value.ToString());
+        //    ventaDataGridView.DataSource = LogicaVenta.filter_byDate(dateBox1.Value, dateBox2.Value);
+        //}
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -113,6 +142,8 @@ namespace Vistas
         {
 
         }
+
+      
 
         
     }
