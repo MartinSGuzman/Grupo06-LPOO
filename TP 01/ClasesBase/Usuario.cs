@@ -8,7 +8,7 @@ namespace ClasesBase
     public class Usuario
     {
         private int Usu_ID;
-
+        //prueba desde mi pc nico
         public int Usu_ID1
         {
             get { return Usu_ID; }

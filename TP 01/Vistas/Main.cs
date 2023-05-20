@@ -18,11 +18,9 @@ namespace Vistas
         public Main()
         {
             InitializeComponent();
-            load_combo_roles();
-            load_usuarios();
         }
 
-        private void SaveUser_Click(object sender, EventArgs e)
+        private void SaveUser_Click (object sender, EventArgs e)
         {
             Usuario oUser = new Usuario();
             oUser.Rol_Codigo = (int)cmbRol_Id.SelectedValue;
@@ -44,135 +42,48 @@ namespace Vistas
 
         private void load_combo_roles()
         {
-            cmbRol_Id.DisplayMember = "rol_Descripcion";
-            cmbRol_Id.ValueMember = "rol_Codigox";
+            cmbRol_Id.DisplayMember = "rol_Descrip";
+            cmbRol_Id.ValueMember = "rol_id";
             cmbRol_Id.DataSource = LogicaUsuario.list_roles();
         }
 
-      
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void load_usuarios()
         {
-            dgwUsuarios.DataSource = LogicaUsuario.exec_list_usuarios();
+            dgwUsuarios.DataSource = LogicaUsuario.list_usuarios();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            if (txtPattern.Text != "")
+       private void btnSearch_Click(object sender, EventArgs e)
+         {
+            if(txtPattern.Text != "")
             {
-                dgwUsuarios.DataSource = LogicaUsuario.exec_search_usuarios(txtPattern.Text);
+            dgwUsuarios.DataSource = LogicaUsuario.search_usuarios(txtPattern.Text);
             }
-            else
-            {
-                load_usuarios();
-            }
-
-
-        }
-
-        
-        private void dgwUsuarios_CurrentCellChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("No ai");
-            if (dgwUsuarios.CurrentRow != null)
-            {
-                cmbRol_Id.SelectedValue = dgwUsuarios.CurrentRow.Cells["rol_id"].Value.ToString();
-                txtUsu_ApellidoNombre1.Text = dgwUsuarios.CurrentRow.Cells["ApellidoNombre"].Value.ToString();
-                txtUsuario.Text = dgwUsuarios.CurrentRow.Cells["NombreUsuario"].Value.ToString();
-                txtContraseña.Text = dgwUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
-                MessageBox.Show("No ai");
-            }
-            else
-            {
-                MessageBox.Show("No ai");
-            }
-
-        }
-
-        private void txtUsu_ApellidoNombre1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click_1(object sender, EventArgs e)
-        {
-           
-            if (txtPattern.Text != "")
-            {
-                dgwUsuarios.DataSource = LogicaUsuario.exec_search_usuarios(txtPattern.Text);
-
-            }
-            else
-            {
-                load_usuarios();
-            }
-        }
-        private void dgwUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            if (dgwUsuarios.CurrentRow != null)
-            {
-                cmbRol_Id.SelectedValue = dgwUsuarios.CurrentRow.Cells["Rol"].Value.ToString();
-                txtUsu_ApellidoNombre1.Text = dgwUsuarios.CurrentRow.Cells["ApellidoNombre"].Value.ToString();
-                txtUsuario.Text = dgwUsuarios.CurrentRow.Cells["NombreUsuario"].Value.ToString();
-                txtContraseña.Text = dgwUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
-                btnEliminar.Visible = true;
-                SaveUser.Visible = false;
-                btnModificar.Visible = true;
-            }
-        
-
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-           
-            int ID = int.Parse(dgwUsuarios.CurrentRow.Cells["ID"].Value.ToString());
-            LogicaUsuario.exec_eliminar_usuario(ID);
+            else{
             load_usuarios();
-
-  
-            txtUsu_ApellidoNombre1.Text = "";
-            txtUsuario.Text = "";
-            txtContraseña.Text = "";
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-            int ID = int.Parse(dgwUsuarios.CurrentRow.Cells["ID"].Value.ToString());
-
-            LogicaUsuario.exec_modificar_usuario(ID, txtUsu_ApellidoNombre1.Text, txtUsuario.Text, txtContraseña.Text, (int)cmbRol_Id.SelectedValue);
-            load_usuarios();
-
-
-            txtUsu_ApellidoNombre1.Text = "";
-            txtUsuario.Text = "";
-            txtContraseña.Text = "";
-        }
-
-        private void txtPattern_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            Clientes cliente = new Clientes();
-            cliente.Show();
-           
-        }
-
-       
-
-       
-
+            }
         
+
     }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void dgwUsuarios_CurrentCellChanged (object sender, EventArgs e)
+        {
+        
+            if(dgwUsuarios.CurrentRow != null){
+                cmbRol_Id.SelectedValue = dgwUsuarios.CurrentRow.Cells["rol_id"].Value.ToString();
+                txtUsu_ApellidoNombre1.Text = dgwUsuarios.CurrentRow.Cells["Apellido"].Value.ToString();
+                txtUsuario.Text = dgwUsuarios.CurrentRow.Cells["Usuario"].Value.ToString();
+                txtContraseña.Text = dgwUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
+            }
+
+        }
 }

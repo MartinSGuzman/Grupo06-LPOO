@@ -1,0 +1,5 @@
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\ClaseBase\bin\Debug\ClaseBase.dll.config
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\ClaseBase\bin\Debug\ClaseBase.dll
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\ClaseBase\bin\Debug\ClaseBase.pdb
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\ClaseBase\obj\Debug\ClaseBase.dll
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 02\LPOO_GRUPO_06\ClaseBase\obj\Debug\ClaseBase.pdb

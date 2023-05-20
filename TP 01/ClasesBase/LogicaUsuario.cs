@@ -6,7 +6,6 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
-
 namespace ClasesBase
 {
     public class LogicaUsuario
@@ -30,13 +29,14 @@ namespace ClasesBase
 
         public static void insert_Usuario(Usuario user)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Usuario(usu_NombreUsuario, usu_Contraseña, usu_ApellidoNombre, rol_Codigo) values(@nombreUs,@contra,@apellido,@rol)";
+            cmd.CommandText = "INSERT INTO Usuario(Usu_ID, Usu_NombreUsuario1, Usu_Contraseña1, Usu_ApellidoNombre1, Rol_Codigo1) values(@id,@nombreUs,@contra,@apellido,@rol)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
+            cmd.Parameters.AddWithValue("@id", user.Usu_ID1);
             cmd.Parameters.AddWithValue("@nombreUs", user.Usu_NombreUsuario1);
             cmd.Parameters.AddWithValue("@contra", user.Usu_Contraseña1);
             cmd.Parameters.AddWithValue("@apellido", user.Usu_ApellidoNombre1);
@@ -47,13 +47,18 @@ namespace ClasesBase
             cnn.Close();
         }
 
-        public static DataTable exec_list_usuarios()
+        public static DataTable list_usuarios()
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "listar_usuarios_sp";
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SELECT ";
+            cmd.CommandText += " rol_descrip as 'Rol', ";
+            cmd.CommandText += " usr_apellido as 'Apellido', usr_nombre as 'Nombre', ";
+            cmd.CommandText += " usr_username as 'Usuario', usr_password as 'Contraseña', ";
+            cmd.CommandText += " FROM Usuario as U";
+            cmd.CommandText += " LEFT JOIN Roles as R ON (R.rol_id=U.rol_id)";
+            cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -64,18 +69,25 @@ namespace ClasesBase
             return dt;
         }
 
-        public static DataTable exec_search_usuarios(string sPattern)
+        public static DataTable search_usuarios(string sPattern)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "search_usuarios";
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SELECT ";
+            cmd.CommandText += " rol_descrip as 'Rol', ";
+            cmd.CommandText += " usr_apellido as 'Apellido', usr_nombre as 'Nombre', ";
+            cmd.CommandText += " usr_username as 'Usuario', usr_password as 'Contraseña', ";
+            cmd.CommandText += " FROM Usuario as U";
+            cmd.CommandText += " LEFT JOIN Roles as R ON (R.rol_id=U.rol_id)";
 
+            cmd.CommandText += " WHERE";
+            cmd.CommandText += " usr_apellido LIKE @pattern ";
 
+            cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@pattern", "%" + sPattern + "%");
+            cmd.Parameters.AddWithValue("@pattern", "%"+sPattern+"%");
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -84,47 +96,14 @@ namespace ClasesBase
 
             return dt;
         }
+          
+        
+        
+       
 
 
-        public static void exec_eliminar_usuario(int ID)
-        {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "eliminar_usuario_sp";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-
-            cmd.Connection = cnn;
-
-            cmd.Parameters.AddWithValue("@usu_ID", ID);
-
-            cnn.Open();
-            cmd.ExecuteNonQuery();
-            cnn.Close();
-        }
-
-        public static void exec_modificar_usuario(int ID, string nombre, string usuario, string contra, int rol)
-        {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.pasteleriaConnectionString1);
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "modificar_usuario_sp";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-
-            cmd.Connection = cnn;
-
-            cmd.Parameters.AddWithValue("@usu_ID", ID);
-            cmd.Parameters.AddWithValue("@nuevo_nombre", nombre);
-            cmd.Parameters.AddWithValue("@nuevo_contraseña", contra);
-            cmd.Parameters.AddWithValue("@nuevo_usuario", usuario);
-            cmd.Parameters.AddWithValue("@nuevo_rol", rol);
-
-            cnn.Open();
-            cmd.ExecuteNonQuery();
-            cnn.Close();
+         }
         }
     }
 }
-  

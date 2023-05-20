@@ -16,6 +16,7 @@ C:\Users\User\Documents\Grupo06-LPOO\TP 01\Vistas\obj\x86\Debug\Vistas.Main.reso
 C:\Users\User\Documents\Grupo06-LPOO\TP 01\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\User\Documents\Grupo06-LPOO\TP 01\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
 E:\TP 01\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\Vistas.exe
 C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\Vistas.FormLogin.resources
 C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\Vistas.Main.resources
@@ -26,16 +27,6 @@ C:\Users\admin\Desktop\TP 01\Vistas\bin\Debug\Vistas.exe
 C:\Users\admin\Desktop\TP 01\Vistas\bin\Debug\Vistas.pdb
 C:\Users\admin\Desktop\TP 01\Vistas\bin\Debug\ClasesBase.dll
 C:\Users\admin\Desktop\TP 01\Vistas\bin\Debug\ClasesBase.pdb
-C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\Vistas.exe
 C:\Users\admin\Desktop\TP 01\Vistas\obj\x86\Debug\Vistas.pdb
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.exe
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.pdb
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\bin\Debug\Vistas.exe
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\bin\Debug\Vistas.pdb
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\bin\Debug\ClasesBase.dll
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\bin\Debug\ClasesBase.pdb
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.FormLogin.resources
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.Main.resources
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
-C:\Users\leVen\OneDrive\Documentos\Escuelita\TPPOO\TP 01\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 01\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 01\Vistas\obj\x86\Debug\Vistas.pdb
