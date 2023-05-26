@@ -69,7 +69,7 @@
             // Login
             // 
             this.Login.Location = new System.Drawing.Point(259, 118);
-            this.Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login.Margin = new System.Windows.Forms.Padding(2);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(50, 22);
             this.Login.TabIndex = 5;
@@ -80,7 +80,7 @@
             // usrName
             // 
             this.usrName.Location = new System.Drawing.Point(197, 58);
-            this.usrName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usrName.Margin = new System.Windows.Forms.Padding(2);
             this.usrName.Name = "usrName";
             this.usrName.Size = new System.Drawing.Size(68, 20);
             this.usrName.TabIndex = 6;
@@ -89,7 +89,7 @@
             // passLogin
             // 
             this.passLogin.Location = new System.Drawing.Point(197, 84);
-            this.passLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passLogin.Margin = new System.Windows.Forms.Padding(2);
             this.passLogin.Name = "passLogin";
             this.passLogin.Size = new System.Drawing.Size(68, 20);
             this.passLogin.TabIndex = 7;
@@ -105,7 +105,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
             this.Text = "Form2";
             this.ResumeLayout(false);

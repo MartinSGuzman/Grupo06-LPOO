@@ -39,8 +39,9 @@
             this.UsuarioIn = new System.Windows.Forms.Label();
             this.txtUsu_ApellidoNombre1 = new System.Windows.Forms.TextBox();
             this.dgwUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtPattern = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.SaveUser);
             this.groupBox1.Controls.Add(this.txtContraseña);
             this.groupBox1.Controls.Add(this.txtUsuario);
@@ -112,7 +114,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtUsuario.TabIndex = 10;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // ContraIn
             // 
@@ -140,6 +141,7 @@
             this.txtUsu_ApellidoNombre1.Size = new System.Drawing.Size(121, 20);
             this.txtUsu_ApellidoNombre1.TabIndex = 3;
             this.txtUsu_ApellidoNombre1.TabStop = false;
+            this.txtUsu_ApellidoNombre1.TextChanged += new System.EventHandler(this.txtUsu_ApellidoNombre1_TextChanged);
             // 
             // dgwUsuarios
             // 
@@ -148,15 +150,7 @@
             this.dgwUsuarios.Name = "dgwUsuarios";
             this.dgwUsuarios.Size = new System.Drawing.Size(489, 303);
             this.dgwUsuarios.TabIndex = 4;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(530, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.dgwUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwUsuarios_CellContentClick);
             // 
             // txtPattern
             // 
@@ -165,15 +159,35 @@
             this.txtPattern.Size = new System.Drawing.Size(457, 20);
             this.txtPattern.TabIndex = 6;
             this.txtPattern.TabStop = false;
-            this.txtPattern.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(530, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(67, 256);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 490);
-            this.Controls.Add(this.txtPattern);
             this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtPattern);
             this.Controls.Add(this.dgwUsuarios);
             this.Controls.Add(this.groupBox1);
             this.Name = "Main";
@@ -199,8 +213,9 @@
         private System.Windows.Forms.Label UsuarioIn;
         private System.Windows.Forms.Button SaveUser;
         private System.Windows.Forms.DataGridView dgwUsuarios;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtPattern;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnEliminar;
 
     }
 }
