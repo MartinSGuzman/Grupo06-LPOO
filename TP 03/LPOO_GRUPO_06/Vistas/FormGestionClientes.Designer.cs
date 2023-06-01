@@ -182,6 +182,7 @@
             this.radioButton1.TabIndex = 16;
             this.radioButton1.Text = "Limpiar";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             this.radioButton1.Click += new System.EventHandler(this.FormGestionClientes_Load);
             // 
             // FormGestionClientes

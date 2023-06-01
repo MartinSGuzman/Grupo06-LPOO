@@ -85,5 +85,17 @@ namespace Vistas
             FormGestionVentasVer fromv = new FormGestionVentasVer();
             fromv.Show();
         }
+
+        private void gestionCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGestionCategorias frmc = new FormGestionCategorias();
+            frmc.Show();
+        }
+
+        private void gestionObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGestionObraSocial fromg = new FormGestionObraSocial();
+            fromg.Show();
+        }
     }
 }

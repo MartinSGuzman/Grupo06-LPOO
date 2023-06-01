@@ -19,8 +19,8 @@ namespace Vistas
         private void FormGestionVentasVer_Load(object sender, EventArgs e)
         {
             list_ventas();
-            //lst_products();
-            //load_customers();
+            lst_products();
+            load_customers();
         }
         private void list_ventas()
         {

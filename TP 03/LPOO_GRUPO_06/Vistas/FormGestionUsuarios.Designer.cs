@@ -37,11 +37,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.datagridusers = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.Label();
             this.borraruser = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagridusers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,15 +124,15 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "password";
             // 
-            // button1
+            // saveButton
             // 
-            this.button1.Location = new System.Drawing.Point(575, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(307, 34);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.handleSaveUser);
+            this.saveButton.Location = new System.Drawing.Point(575, 310);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(307, 34);
+            this.saveButton.TabIndex = 9;
+            this.saveButton.Text = "Guardar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.handleSaveUser);
             // 
             // datagridusers
             // 
@@ -165,22 +167,46 @@
             // 
             this.borraruser.Location = new System.Drawing.Point(22, 350);
             this.borraruser.Name = "borraruser";
-            this.borraruser.Size = new System.Drawing.Size(307, 34);
+            this.borraruser.Size = new System.Drawing.Size(123, 34);
             this.borraruser.TabIndex = 13;
             this.borraruser.Text = "Borrar";
             this.borraruser.UseVisualStyleBackColor = true;
+            this.borraruser.Visible = false;
             this.borraruser.Click += new System.EventHandler(this.removeUser);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(168, 350);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 34);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Editar O Borrar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.handleEditVisible);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Location = new System.Drawing.Point(324, 350);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(132, 34);
+            this.EditButton.TabIndex = 15;
+            this.EditButton.Text = "cancelar";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Visible = false;
+            this.EditButton.Click += new System.EventHandler(this.handleEditCancell);
             // 
             // FormGestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 390);
+            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.borraruser);
             this.Controls.Add(this.username);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.datagridusers);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -210,10 +236,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DataGridView datagridusers;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.Button borraruser;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button EditButton;
     }
 }

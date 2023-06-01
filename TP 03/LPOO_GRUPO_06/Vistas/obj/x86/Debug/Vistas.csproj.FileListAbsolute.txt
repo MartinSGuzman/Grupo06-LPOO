@@ -30,3 +30,5 @@ C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\bin\Debug\ClaseB
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\bin\Debug\ClaseBase.pdb
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.exe
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormGestionCategorias.resources
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.FormGestionObraSocial.resources

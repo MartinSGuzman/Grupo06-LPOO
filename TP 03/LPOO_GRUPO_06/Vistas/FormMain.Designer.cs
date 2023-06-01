@@ -34,10 +34,12 @@
             this.gestionUsuarioMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.nameUser = new System.Windows.Forms.Label();
+            this.gestionObraSocialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +77,8 @@
             // 
             // gestionUsuarioMenuStrip
             // 
+            this.gestionUsuarioMenuStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionObraSocialToolStripMenuItem});
             this.gestionUsuarioMenuStrip.Name = "gestionUsuarioMenuStrip";
             this.gestionUsuarioMenuStrip.Size = new System.Drawing.Size(180, 29);
             this.gestionUsuarioMenuStrip.Text = "Gestion de usuarios";
@@ -89,10 +93,19 @@
             // 
             // gestionProductosToolStripMenuItem
             // 
+            this.gestionProductosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionCategoriasToolStripMenuItem});
             this.gestionProductosToolStripMenuItem.Name = "gestionProductosToolStripMenuItem";
             this.gestionProductosToolStripMenuItem.Size = new System.Drawing.Size(170, 29);
             this.gestionProductosToolStripMenuItem.Text = "Gestion Productos";
             this.gestionProductosToolStripMenuItem.Click += new System.EventHandler(this.gestionProductosToolStripMenuItem_Click);
+            // 
+            // gestionCategoriasToolStripMenuItem
+            // 
+            this.gestionCategoriasToolStripMenuItem.Name = "gestionCategoriasToolStripMenuItem";
+            this.gestionCategoriasToolStripMenuItem.Size = new System.Drawing.Size(233, 30);
+            this.gestionCategoriasToolStripMenuItem.Text = "Gestion Categorias";
+            this.gestionCategoriasToolStripMenuItem.Click += new System.EventHandler(this.gestionCategoriasToolStripMenuItem_Click);
             // 
             // gestionVentasToolStripMenuItem
             // 
@@ -128,6 +141,13 @@
             this.nameUser.Size = new System.Drawing.Size(2, 22);
             this.nameUser.TabIndex = 4;
             // 
+            // gestionObraSocialToolStripMenuItem
+            // 
+            this.gestionObraSocialToolStripMenuItem.Name = "gestionObraSocialToolStripMenuItem";
+            this.gestionObraSocialToolStripMenuItem.Size = new System.Drawing.Size(235, 30);
+            this.gestionObraSocialToolStripMenuItem.Text = "Gestion ObraSocial";
+            this.gestionObraSocialToolStripMenuItem.Click += new System.EventHandler(this.gestionObraSocialToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -162,5 +182,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem verVentasToolStripMenuItem;
         private System.Windows.Forms.Label nameUser;
+        private System.Windows.Forms.ToolStripMenuItem gestionCategoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionObraSocialToolStripMenuItem;
     }
 }

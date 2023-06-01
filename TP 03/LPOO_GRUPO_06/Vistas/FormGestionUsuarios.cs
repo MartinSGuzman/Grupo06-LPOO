@@ -35,6 +35,10 @@ namespace Vistas
             list_user();
             list_roles();
             username.Text = user.User_username.ToString();
+            datagridusers.Enabled = false;
+            datagridusers.ClearSelection();
+            editar = false;
+            Console.WriteLine("ROL ELELCCIONADO: ", rolBox.SelectedValue);
         }
 
         private void list_user() {
@@ -49,24 +53,28 @@ namespace Vistas
         {
 
         }
-
         private void handleSaveUser(object sender, EventArgs e)
         {
             if(editar == false){
+            Console.WriteLine("ROL pasa por acaaa: ", rolBox.SelectedValue);
             Usuario user = new Usuario();
             user.Rol_id = (int)rolBox.SelectedValue;
             user.User = userbox.Text;
             user.User_username = username_box.Text;
             user.User_password = password_box.Text;
             LogicaUsuario.save_user(user);
+            editar = false;
             list_user();
+
             }
-            Console.WriteLine("ROLBOX NATES DE ENTRAR AL EDITAR TRY: "+rolBox.SelectedIndex);
 
             if (editar == true) {
+                Console.WriteLine("ROLBOX NATES DE ENTRAR AL EDITAR TRY: " + rolBox.SelectedIndex);
                 int rol = rolBox.SelectedIndex + 1;
                 try {
                     LogicaUsuario.edit_user(userbox.Text, password_box.Text, username_box.Text, rol.ToString(), idUser);
+                    datagridusers.ClearSelection();
+                    editar = false;
                     list_user();
                 }
                 catch (Exception ex)
@@ -74,11 +82,15 @@ namespace Vistas
                     MessageBox.Show("No se puede editar estos datos: " + ex.Message);
                 }
             }
+            userbox.Text = "";
+            password_box.Text = "";
+            username_box.Text = "";
+            datagridusers.ClearSelection();
         }
         
         private void datagridusers_CellContentClick(object sender, EventArgs e)
         {
-            if (datagridusers.CurrentRow != null)
+            if (datagridusers.CurrentRow != null && editar == true)
             {
                 editar = true;
                 Console.WriteLine("seleccionado");
@@ -104,10 +116,9 @@ namespace Vistas
 
         private void removeUser(object sender, EventArgs e)
         {
-            Console.WriteLine("DATA GRIDUSER", datagridusers.CurrentRow);
+            saveButton.Enabled = false;
             if (datagridusers.CurrentRow != null)
             {
-                Console.WriteLine("TRUEEEEE REMOVE");
                 idUser = datagridusers.CurrentRow.Cells["ID"].Value.ToString();
                 LogicaUsuario.deleteUser(idUser);
                 list_user();
@@ -115,6 +126,27 @@ namespace Vistas
             else {
                 MessageBox.Show("SLECICONE UN USUARIO!");
             }
+        }
+
+        private void handleEditVisible(object sender, EventArgs e)
+        {
+            datagridusers.Enabled = true;
+            EditButton.Visible = true;
+            editar = true;
+            borraruser.Visible = true;
+
+        }
+
+        private void handleEditCancell(object sender, EventArgs e)
+        {
+            EditButton.Visible = false;
+            datagridusers.Enabled = false;
+            datagridusers.ClearSelection();
+            editar = false;
+            userbox.Text = "";
+            borraruser.Visible = false;
+            password_box.Text = "";
+            username_box.Text = "";
         }
 
        

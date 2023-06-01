@@ -40,14 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="LogicaCategoria.cs" />
     <Compile Include="LogicaCliente.cs" />
     <Compile Include="LogicaLogin.cs" />
     <Compile Include="LogicaObraSocial.cs" />
     <Compile Include="LogicaProducto.cs" />
     <Compile Include="LogicaUsuario.cs" />
     <Compile Include="LogicaVenta.cs" />
+    <Compile Include="ObraSocial.cs" />
     <Compile Include="opticaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

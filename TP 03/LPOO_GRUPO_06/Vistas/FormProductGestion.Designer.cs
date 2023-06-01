@@ -33,14 +33,14 @@
             this.categoriesBox = new System.Windows.Forms.ComboBox();
             this.DescripcionBox = new System.Windows.Forms.TextBox();
             this.priceBox = new System.Windows.Forms.NumericUpDown();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.categoryFilterBox = new System.Windows.Forms.ComboBox();
             this.keyProductBox = new System.Windows.Forms.NumericUpDown();
             this.Codigo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.handleRemove = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.handleCancell = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyProductBox)).BeginInit();
@@ -94,27 +94,6 @@
             this.priceBox.Size = new System.Drawing.Size(191, 26);
             this.priceBox.TabIndex = 6;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 21);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(157, 24);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "limpiar categorias";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // categoryFilterBox
-            // 
-            this.categoryFilterBox.FormattingEnabled = true;
-            this.categoryFilterBox.Location = new System.Drawing.Point(184, 20);
-            this.categoryFilterBox.Name = "categoryFilterBox";
-            this.categoryFilterBox.Size = new System.Drawing.Size(199, 28);
-            this.categoryFilterBox.TabIndex = 8;
-            this.categoryFilterBox.SelectedIndexChanged += new System.EventHandler(this.filter_byCategory);
-            // 
             // keyProductBox
             // 
             this.keyProductBox.Location = new System.Drawing.Point(765, 66);
@@ -163,28 +142,50 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Precio";
             // 
-            // button1
+            // handleRemove
             // 
-            this.button1.Location = new System.Drawing.Point(12, 463);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 33);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Borrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.deleteProduct);
+            this.handleRemove.Location = new System.Drawing.Point(12, 463);
+            this.handleRemove.Name = "handleRemove";
+            this.handleRemove.Size = new System.Drawing.Size(213, 33);
+            this.handleRemove.TabIndex = 14;
+            this.handleRemove.Text = "Borrar";
+            this.handleRemove.UseVisualStyleBackColor = true;
+            this.handleRemove.Visible = false;
+            this.handleRemove.Click += new System.EventHandler(this.deleteProduct);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(251, 463);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(213, 33);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Editar O Borrar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.handleEditVisible);
+            // 
+            // handleCancell
+            // 
+            this.handleCancell.Location = new System.Drawing.Point(479, 463);
+            this.handleCancell.Name = "handleCancell";
+            this.handleCancell.Size = new System.Drawing.Size(213, 33);
+            this.handleCancell.TabIndex = 16;
+            this.handleCancell.Text = "Cancelar";
+            this.handleCancell.UseVisualStyleBackColor = true;
+            this.handleCancell.Visible = false;
+            this.handleCancell.Click += new System.EventHandler(this.handleRemoveVisible);
             // 
             // FormProductGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 526);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.handleCancell);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.handleRemove);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Codigo);
             this.Controls.Add(this.keyProductBox);
-            this.Controls.Add(this.categoryFilterBox);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.priceBox);
             this.Controls.Add(this.DescripcionBox);
             this.Controls.Add(this.categoriesBox);
@@ -209,13 +210,13 @@
         private System.Windows.Forms.ComboBox categoriesBox;
         private System.Windows.Forms.TextBox DescripcionBox;
         private System.Windows.Forms.NumericUpDown priceBox;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox categoryFilterBox;
         private System.Windows.Forms.NumericUpDown keyProductBox;
         private System.Windows.Forms.Label Codigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button handleRemove;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button handleCancell;
     }
 }

@@ -25,20 +25,7 @@ namespace ClaseBase
             cnn.Close();
 
         }
-        public static DataTable list_categories() {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select category from Producto";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-
-            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-
-            dadapter.Fill(dt);
-            return dt;
-        }
+        
         public static DataTable list_productsBox() {
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
@@ -59,7 +46,7 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "UPDATE Producto SET key_product = @keyProductBox, category = @categoriesBox, description = @descripcionBox, price = @priceBox WHERE product_id = @id";
+            cmd.CommandText = "UPDATE Producto SET key_product = @keyProductBox, category = @categoriesBox, description = @descripcionBox, price = @priceBox WHERE id = @id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
