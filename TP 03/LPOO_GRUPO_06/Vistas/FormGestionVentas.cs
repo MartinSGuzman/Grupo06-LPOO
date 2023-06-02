@@ -28,7 +28,6 @@ namespace Vistas
         //}
         private void FormGestionVentas_Load(object sender, EventArgs e)
         {
-            load_roles();
             load_customers();
             lst_products();
             list_ventas();
@@ -47,7 +46,7 @@ namespace Vistas
 
             DataGridViewTextBoxColumn columnaProductKey = new DataGridViewTextBoxColumn();
             columnaProductKey.DataPropertyName = "key_product"; // Nombre de la propiedad en la clase Venta
-            columnaProductKey.HeaderText = "Cod.Producto";
+            columnaProductKey.HeaderText = "CODIGO DE PRODUCTO";
             ventaDataGridView.Columns.Add(columnaProductKey);
 
             DataGridViewTextBoxColumn columnaProducto = new DataGridViewTextBoxColumn();
@@ -78,23 +77,19 @@ namespace Vistas
         }
         private void add_cart(object sender, EventArgs e)
         {
-            int seleccionado = productsBox.SelectedIndex + 1;
+            int seleccionado = (int)((DataRowView)productsBox.SelectedItem)[productsBox.ValueMember];
 
             Console.Write("se selecciono" + seleccionado);
             Producto data = LogicaProducto.find_product(seleccionado.ToString());
-
-
            
             //se setea los datos del cliente y la fecha
             clienteBox.Enabled = false;
-            obraSocialBox.Enabled = false;
             dateBox.Enabled = false;
-
 
             //SE GUARDA LA VENTA DETALLE
             Venta ventaDetalle = new Venta();
             ventaDetalle.Cant = cantBox.Value;
-            ventaDetalle.Key_product = data.Key_product.ToString();
+            ventaDetalle.Key_product = data.Id.ToString();
             ventaDetalle.Price = data.Price;
             ventaDetalle.Total = data.Price * cantBox.Value;
             ventaDetalle.Product_name = productsBox.Text.ToString();
@@ -113,31 +108,36 @@ namespace Vistas
             productsBox.DataSource = LogicaProducto.list_productsBox();
         }
 
-        private void load_roles(){
-            obraSocialBox.DisplayMember = "os_razon";
-            obraSocialBox.ValueMember = "id";
-            obraSocialBox.DataSource = LogicaObraSocial.list_obraSocial();
-        }
 
         private void load_customers() { 
             clienteBox.DisplayMember = "name";
             clienteBox.ValueMember = "id";
             clienteBox.DataSource = LogicaCliente.list_customerBox();
 
-            //filterCustomerBox.DisplayMember = "name";
-            //filterCustomerBox.ValueMember = "id";
-            //filterCustomerBox.DataSource = LogicaCliente.list_customerBox();
         }
-
+        private void handleSelectedCustomer(object sender, EventArgs e)
+        {
+            int seleccionado = (int)((DataRowView)clienteBox.SelectedItem)[clienteBox.ValueMember];
+            Cliente clien = LogicaCliente.find_customer(seleccionado.ToString());
+            Console.WriteLine("CLIENTE ENCONTRADO: " + clien.Name + "OBRASOCIAL: " + clien.Os_id);
+            if (clien != null)
+            {
+                ObraSocial os = LogicaObraSocial.find_obraSocial(clien.Os_id.ToString());
+                Console.WriteLine("RAZON DE LA OBRASOCIAL: "+ os.Razon);
+                osBox.Text = os.Razon;
+            }
+            else
+            {
+                Console.WriteLine("NO SE ENCONTRO");
+            }
+        }
         private void handle_selectedProduct(object sender, EventArgs e)
         {
-            Console.Write("se selecciono" + productsBox.SelectedIndex.ToString());
-            int seleccionado = productsBox.SelectedIndex + 1;
+            int seleccionado = (int)((DataRowView)productsBox.SelectedItem)[productsBox.ValueMember]; 
             Producto data = LogicaProducto.find_product(seleccionado.ToString());
-            Console.Write("Este es el resulltado" + data.ToString());
             if (data != null) 
             {   
-                codigoBox.Text = data.Key_product;
+                codigoBox.Text = data.Id.ToString();
                 priceLabel.Text = data.Price.ToString();
             }
             else {
@@ -152,7 +152,7 @@ namespace Vistas
         {
             Random rnd = new Random();
 
-            int id = clienteBox.SelectedIndex + 1;
+            int id = (int)((DataRowView)clienteBox.SelectedItem)[clienteBox.ValueMember];
             Cliente client = LogicaCliente.find_customer(id.ToString());
             //LogicaVenta.put_ventaDetalle(ventareal.Id, client.Dni.ToString());
             VentaReal newVenta = new VentaReal();
@@ -204,6 +204,8 @@ namespace Vistas
         {
             this.Close();
         }
+
+       
 
       
 

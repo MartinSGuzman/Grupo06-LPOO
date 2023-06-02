@@ -28,9 +28,9 @@ namespace Vistas
         }
         private void lst_products()
         {
-            productsBox.DisplayMember = "description";
+            productsBox.DisplayMember = "name";
             productsBox.ValueMember = "id";
-            productsBox.DataSource = LogicaProducto.list_productsBox();
+            productsBox.DataSource = LogicaCliente.list_customerBox();
         }
         //private void load_roles()
         //{
@@ -58,7 +58,7 @@ namespace Vistas
         private void filterByCustomer(object sender, EventArgs e)
         {
             Console.WriteLine(clienteBox.SelectedIndex);
-            int id = clienteBox.SelectedIndex + 1;
+            int id = (int)((DataRowView)clienteBox.SelectedItem)[clienteBox.ValueMember]; ;
             Console.WriteLine("ID A BUSCAR " + id);
             Cliente client = LogicaCliente.find_customer(id.ToString());
             dataVenta.DataSource = LogicaVenta.filter_by_customer(client.Dni.ToString());
@@ -67,15 +67,21 @@ namespace Vistas
 
         private void filterByProduct(object sender, EventArgs e)
         {
-            int id = productsBox.SelectedIndex + 1;
-            Producto product = LogicaProducto.find_product(id.ToString());
-            dataVenta.DataSource = LogicaVenta.filter_by_product(product.Id);
+            list_ventas();
+            int id = (int)((DataRowView)productsBox.SelectedItem)[productsBox.ValueMember];
+            Cliente client = LogicaCliente.find_customer(id.ToString());
+            dataVenta.DataSource = LogicaCliente.filter_byProducts(client.Dni.ToString());
 
         }
 
         private void dataVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void handleLimpiar(object sender, EventArgs e)
+        {
+            list_ventas();
         }
 
 

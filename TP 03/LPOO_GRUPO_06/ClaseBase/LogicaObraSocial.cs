@@ -12,7 +12,7 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT os_razon from ObraSocial";
+            cmd.CommandText = "SELECT id, os_razon from ObraSocial";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -92,6 +92,30 @@ namespace ClaseBase
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
+        }
+        public static ObraSocial find_obraSocial(string id)
+        {
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * from ObraSocial WHERE id like @id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@id", "%" + id + "%");
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            dadapter.Fill(dt);
+            ObraSocial producto = new ObraSocial();
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                producto.Id = Convert.ToInt32(row["id"]);
+                producto.Razon = row["os_razon"].ToString();
+            }
+            else {
+                Console.WriteLine("NO SE ENCONTRO NINGUNA OBRA SOCIAL");
+            }
+            return producto;
         }
     }
 }

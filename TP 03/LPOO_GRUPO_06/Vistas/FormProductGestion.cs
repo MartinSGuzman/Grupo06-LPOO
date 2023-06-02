@@ -76,8 +76,6 @@ namespace Vistas
                 {
                     Console.WriteLine("ENTRA POR EDITAR");
                     LogicaProducto.edit_product(keyProductBox.Text, categoriesBox.Text, priceBox.Text, DescripcionBox.Text, idProduct);
-                    editar = false;
-
                     load_products();
                 }
                 catch (Exception ex)

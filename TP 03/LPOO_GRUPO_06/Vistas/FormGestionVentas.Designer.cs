@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.sellButton = new System.Windows.Forms.Button();
-            this.obraSocialBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.priceLabel = new System.Windows.Forms.Label();
             this.cancelarButton = new System.Windows.Forms.Button();
             this.codigoBox = new System.Windows.Forms.Label();
+            this.osBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cantBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(633, 107);
+            this.label1.Location = new System.Drawing.Point(633, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 0;
@@ -73,18 +73,10 @@
             this.sellButton.UseVisualStyleBackColor = true;
             this.sellButton.Click += new System.EventHandler(this.handle_sell);
             // 
-            // obraSocialBox
-            // 
-            this.obraSocialBox.FormattingEnabled = true;
-            this.obraSocialBox.Location = new System.Drawing.Point(730, 99);
-            this.obraSocialBox.Name = "obraSocialBox";
-            this.obraSocialBox.Size = new System.Drawing.Size(226, 28);
-            this.obraSocialBox.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(666, 152);
+            this.label2.Location = new System.Drawing.Point(666, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 4;
@@ -138,10 +130,11 @@
             // clienteBox
             // 
             this.clienteBox.FormattingEnabled = true;
-            this.clienteBox.Location = new System.Drawing.Point(730, 144);
+            this.clienteBox.Location = new System.Drawing.Point(730, 76);
             this.clienteBox.Name = "clienteBox";
             this.clienteBox.Size = new System.Drawing.Size(226, 28);
             this.clienteBox.TabIndex = 15;
+            this.clienteBox.SelectedIndexChanged += new System.EventHandler(this.handleSelectedCustomer);
             // 
             // productsBox
             // 
@@ -252,11 +245,22 @@
             this.codigoBox.TabIndex = 33;
             this.codigoBox.Text = "0";
             // 
+            // osBox
+            // 
+            this.osBox.AutoSize = true;
+            this.osBox.ForeColor = System.Drawing.Color.Coral;
+            this.osBox.Location = new System.Drawing.Point(730, 136);
+            this.osBox.Name = "osBox";
+            this.osBox.Size = new System.Drawing.Size(122, 20);
+            this.osBox.TabIndex = 34;
+            this.osBox.Text = "Escoja Cliente**";
+            // 
             // FormGestionVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 534);
+            this.Controls.Add(this.osBox);
             this.Controls.Add(this.codigoBox);
             this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.priceLabel);
@@ -275,7 +279,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.obraSocialBox);
             this.Controls.Add(this.sellButton);
             this.Controls.Add(this.label1);
             this.Name = "FormGestionVentas";
@@ -292,7 +295,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button sellButton;
-        private System.Windows.Forms.ComboBox obraSocialBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -311,5 +313,6 @@
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Button cancelarButton;
         private System.Windows.Forms.Label codigoBox;
+        private System.Windows.Forms.Label osBox;
     }
 }

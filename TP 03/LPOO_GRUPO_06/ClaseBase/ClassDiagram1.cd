@@ -24,7 +24,7 @@
   <Class Name="ClaseBase.LogicaObraSocial">
     <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAQAAAAQAAAAAAAAAAAAAAAEAAAAAgAAAAAA=</HashCode>
       <FileName>LogicaObraSocial.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="ClaseBase.Cliente">
     <Position X="2.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAECAAABAAgAAAAIAAAAAAQQAAIEEIACAACAAAAAAgA=</HashCode>
+      <HashCode>AAECAAABAAgAAAAIAAAAAAQQAAIEEIAiAACAIAAAAgA=</HashCode>
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
   </Class>

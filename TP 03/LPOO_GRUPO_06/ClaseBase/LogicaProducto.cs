@@ -30,7 +30,7 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "select description from Producto";
+            cmd.CommandText = "select id, description from Producto";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

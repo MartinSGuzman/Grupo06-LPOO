@@ -57,5 +57,13 @@ namespace ClaseBase
             get { return address; }
             set { address = value; }
         }
+
+        private int os_id;
+
+        public int Os_id
+        {
+            get { return os_id; }
+            set { os_id = value; }
+        }
     }
 }
