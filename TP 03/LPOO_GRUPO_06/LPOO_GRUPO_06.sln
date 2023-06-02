@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaseBase", "ClaseBase\Clas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{BDA8B5E7-47C4-4BF7-B5A5-EEA869105D77}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorSGO", "InstaladorSGO\InstaladorSGO.vdproj", "{179C81EB-F6AD-49A7-900B-330F75E8CEE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,12 @@ Global
 		{BDA8B5E7-47C4-4BF7-B5A5-EEA869105D77}.Release|Mixed Platforms.Build.0 = Release|x86
 		{BDA8B5E7-47C4-4BF7-B5A5-EEA869105D77}.Release|x86.ActiveCfg = Release|x86
 		{BDA8B5E7-47C4-4BF7-B5A5-EEA869105D77}.Release|x86.Build.0 = Release|x86
+		{179C81EB-F6AD-49A7-900B-330F75E8CEE3}.Debug|Any CPU.ActiveCfg = Debug
+		{179C81EB-F6AD-49A7-900B-330F75E8CEE3}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{179C81EB-F6AD-49A7-900B-330F75E8CEE3}.Debug|x86.ActiveCfg = Debug
+		{179C81EB-F6AD-49A7-900B-330F75E8CEE3}.Release|Any CPU.ActiveCfg = Release
+		{179C81EB-F6AD-49A7-900B-330F75E8CEE3}.Release|Mixed Platforms.ActiveCfg = Release
+		{179C81EB-F6AD-49A7-900B-330F75E8CEE3}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

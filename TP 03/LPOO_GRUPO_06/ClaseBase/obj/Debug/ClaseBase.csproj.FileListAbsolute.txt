@@ -8,3 +8,4 @@ C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\ClaseBase\bin\Debug\Cla
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\ClaseBase\bin\Debug\ClaseBase.pdb
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\ClaseBase\obj\Debug\ClaseBase.dll
 C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\ClaseBase\obj\Debug\ClaseBase.pdb
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\ClaseBase\obj\Debug\ClaseBase.csprojResolveAssemblyReference.cache
