@@ -30,6 +30,7 @@ namespace Vistas
             {
                 gestionUsuarioMenuStrip.Visible = false;
                 gestionProductosToolStripMenuItem.Visible = false;
+                verVentasToolStripMenuItem.Visible = false;
             }
             
         }

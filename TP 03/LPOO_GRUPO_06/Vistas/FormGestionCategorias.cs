@@ -31,20 +31,30 @@ namespace Vistas
         private void handleSave(object sender, EventArgs e)
         {
             categoryData.ClearSelection();
-            if (editar == false) {
-                Category newc = new Category();
-                newc.Description = descriptionBox.Text.ToString();
-                LogicaCategoria.save_category(newc);
-                editar = false;
-                list_categories();
-            }
+            if (editar == false)
+            {
+                string description = descriptionBox.Text.ToString();
 
-            if (editar == true)
+                if (description == "")
+                {
+                    MessageBox.Show("COMPLETA TODOS LOS CAMPOS", "ERROR AL GUARDAR CATEGORÍA", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    Category newc = new Category();
+                    newc.Description = description;
+                    LogicaCategoria.save_category(newc);
+                    editar = false;
+                    list_categories();
+                }
+            }
+            else if (editar == true)
             {
                 try
                 {
-                    Console.WriteLine("ENTRA POR EDITAR");
-                    LogicaCategoria.edit_category(descriptionBox.Text, idCategory);
+                    string description = descriptionBox.Text;
+
+                    LogicaCategoria.edit_category(description, idCategory);
                     list_categories();
                 }
                 catch (Exception ex)
