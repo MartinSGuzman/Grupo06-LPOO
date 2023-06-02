@@ -57,39 +57,66 @@ namespace Vistas
 
         private void handleSaveProduct(object sender, EventArgs e)
         {
-            productsData.ClearSelection();
-            if(editar == false){
-                Console.WriteLine("ENTRA POR GUARDAR");
-            Producto pro = new Producto();
-            pro.Key_product = keyProductBox.Value.ToString();
-            pro.Category = categoriesBox.Text.ToString();
-            pro.Price = priceBox.Value;
-            pro.Description = DescripcionBox.Text;
-            LogicaProducto.save_product(pro);
-            editar = false;
-            load_products();
-            }
+             productsData.ClearSelection();
 
-            if (editar == true)
-            {
-                try
-                {
-                    Console.WriteLine("ENTRA POR EDITAR");
-                    LogicaProducto.edit_product(keyProductBox.Text, categoriesBox.Text, priceBox.Text, DescripcionBox.Text, idProduct);
-                    load_products();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se puede editar estos datos: " + ex.Message);
-                }
-            }
-            productsData.ClearSelection();
-            categoriesBox.Text = "";
-            priceBox.Value = 0;
-            DescripcionBox.Text = "";
-            keyProductBox.Value = 0;
+    if (editar == false)
+    {
+        string key_product = keyProductBox.Value.ToString();
+        string category = categoriesBox.Text;
+        decimal price = priceBox.Value;
+        string description = DescripcionBox.Text;
+
+        if (keyProductBox.Value.ToString() == "0" && category == "" && priceBox.Value.ToString() == "0" && description == "")
+        {
+            MessageBox.Show("COMPLETA TODOS LOS CAMPOS", "ERROR AL GUARDAR PRODUCTO", MessageBoxButtons.OKCancel);
         }
+        else
+        {
+            string message = string.Format("Clave: {0}\nCategoría: {1}\nPrecio: {2}\nDescripción: {3}", key_product, category, price, description);
 
+            DialogResult result = MessageBox.Show(message, "Confirmar Guardar", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK)
+            {
+                Producto newProduct = new Producto();
+                newProduct.Key_product = key_product;
+                newProduct.Category = category;
+                newProduct.Price = price;
+                newProduct.Description = description;
+                LogicaProducto.save_product(newProduct);
+
+                editar = false;
+                load_products();
+            }
+        }
+    }
+    else if (editar == true)
+    {
+        string key_product = keyProductBox.Value.ToString();
+        string category = categoriesBox.Text;
+        decimal price = priceBox.Value;
+        string description = DescripcionBox.Text;
+
+        string message = string.Format("Clave: {0}\nCategoría: {1}\nPrecio: {2}\nDescripción: {3}", key_product, category, price, description);
+
+            DialogResult result = MessageBox.Show(message, "Confirmar EDICION", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK)
+            { 
+        Console.WriteLine("ENTRA POR EDITAR");
+        LogicaProducto.edit_product(keyProductBox.Text, categoriesBox.Text, priceBox.Text, DescripcionBox.Text, idProduct);
+        load_products();
+            }
+
+    }
+
+    productsData.ClearSelection();
+    categoriesBox.Text = "";
+    priceBox.Value = 0;
+    DescripcionBox.Text = "";
+    keyProductBox.Value = 0;
+        }
+       
         private void deleteProduct(object sender, EventArgs e)
         {
             if (productsData.CurrentRow != null )

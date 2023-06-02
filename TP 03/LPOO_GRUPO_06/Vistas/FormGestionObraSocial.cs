@@ -21,9 +21,7 @@ namespace Vistas
         {
             list_obras();
             obrasocialdata.Enabled = false;
-            if (razonBox.Text != "" && numberBox.Text != "") {
-                saveButton.Enabled = true;
-            }
+            
         }
 
         private void list_obras() {
@@ -87,31 +85,64 @@ namespace Vistas
         private void handleSave(object sender, EventArgs e)
         {
             obrasocialdata.ClearSelection();
+
             if (editar == false)
             {
-                ObraSocial newc = new ObraSocial();
-                newc.Razon = razonBox.Text.ToString();
-                newc.Number = numberBox.Text.ToString();
-                newc.Phone = phoneBox.Text.ToString();
-                newc.Address = addressBox.Text.ToString();
-                LogicaObraSocial.save_obrasocial(newc);
-                editar = false;
-                list_obras();
+                string razon = razonBox.Text;
+                string number = numberBox.Text;
+                string phone = phoneBox.Text;
+                string address = addressBox.Text;
+
+                if (razon == "" && number == "" && phone == "" && address == "")
+                {
+                    MessageBox.Show("COMPLETA TODOS LOS CAMPOS", "ERROR AL GUARDAR OBRA SOCIAL", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    string message = string.Format("Razón: {0}\nNúmero: {1}\nTeléfono: {2}\nDirección: {3}", razon, number, phone, address);
+
+                    DialogResult result = MessageBox.Show(message, "Confirmar Guardar", MessageBoxButtons.OKCancel);
+
+                    if (result == DialogResult.OK)
+                    {
+                        ObraSocial newObraSocial = new ObraSocial();
+                        newObraSocial.Razon = razon;
+                        newObraSocial.Number = number;
+                        newObraSocial.Phone = phone;
+                        newObraSocial.Address = address;
+                        LogicaObraSocial.save_obrasocial(newObraSocial);
+
+                        editar = false;
+                        list_obras();
+                    }
+                }
+            }
+            else if (editar == true)
+            {
+                string razon = razonBox.Text;
+                string number = numberBox.Text;
+                string phone = phoneBox.Text;
+                string address = addressBox.Text;
+
+                string message = string.Format("Razón: {0}\nNúmero: {1}\nTeléfono: {2}\nDirección: {3}", razon, number, phone, address);
+
+                DialogResult result = MessageBox.Show(message, "Confirmar Edición", MessageBoxButtons.OKCancel);
+
+                if (result == DialogResult.OK)
+                {
+                    try
+                    {
+                        Console.WriteLine("ENTRA POR EDITAR");
+                        LogicaObraSocial.edit_obraSocial(number, address, phone, razon, idObra);
+                        list_obras();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se puede editar estos datos: " + ex.Message);
+                    }
+                }
             }
 
-            if (editar == true)
-            {
-                try
-                {
-                    Console.WriteLine("ENTRA POR EDITAR");
-                    LogicaObraSocial.edit_obraSocial(numberBox.Text, addressBox.Text, phoneBox.Text, razonBox.Text, idObra);
-                    list_obras();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se puede editar estos datos: " + ex.Message);
-                }
-            }
             obrasocialdata.ClearSelection();
             razonBox.Text = "";
             phoneBox.Text = "";

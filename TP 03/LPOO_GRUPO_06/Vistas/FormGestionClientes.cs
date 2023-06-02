@@ -21,26 +21,49 @@ namespace Vistas
         private void save_user(object sender, EventArgs e)
         {
             customerDataGrid.ClearSelection();
+
             if (editar == false)
             {
-                Cliente client = new Cliente();
-                client.Dni = dniBox.Text;
-                client.Name = nameBox.Text;
-                client.Lastname = lastnameBox.Text;
-                client.Os_cuit = os_cuitBox.Text;
-                client.Carnet_number = carnet_numberBox.Text;
-                client.Address = addressBox.Text;
-                client.Os_id = (int)((DataRowView)osBox.SelectedItem)[osBox.ValueMember];
-                Console.WriteLine("OBJETO CLIENT SET CON LOS BOX ADDRESS" + client.Address);
-                LogicaCliente.save_customer(client);
-                list_customer();
+                string dni = dniBox.Text;
+                string name = nameBox.Text;
+                string lastname = lastnameBox.Text;
+                string os_cuit = os_cuitBox.Text;
+                string carnet_number = carnet_numberBox.Text;
+                string address = addressBox.Text;
+                int os_id = (int)((DataRowView)osBox.SelectedItem)[osBox.ValueMember];
+
+                if (dni == "" || name == "" || lastname == "" || os_cuit == "" || carnet_number == "" || address == "")
+                {
+                    MessageBox.Show("COMPLETA TODOS LOS CAMPOS", "ERROR AL GUARDAR CLIENTE", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    Cliente client = new Cliente();
+                    client.Dni = dni;
+                    client.Name = name;
+                    client.Lastname = lastname;
+                    client.Os_cuit = os_cuit;
+                    client.Carnet_number = carnet_number;
+                    client.Address = address;
+                    client.Os_id = os_id;
+
+                    LogicaCliente.save_customer(client);
+                    list_customer();
+                }
             }
-            if (editar == true)
+            else if (editar == true)
             {
                 try
                 {
-                    int os = (int)((DataRowView)osBox.SelectedItem)[osBox.ValueMember];
-                    LogicaCliente.edit_customer(dniBox.Text,nameBox.Text, lastnameBox.Text, addressBox.Text, os_cuitBox.Text, carnet_numberBox.Text, os.ToString() , idCustomer);
+                    string dni = dniBox.Text;
+                    string name = nameBox.Text;
+                    string lastname = lastnameBox.Text;
+                    string os_cuit = os_cuitBox.Text;
+                    string carnet_number = carnet_numberBox.Text;
+                    string address = addressBox.Text;
+                    int os_id = (int)((DataRowView)osBox.SelectedItem)[osBox.ValueMember];
+
+                    LogicaCliente.edit_customer(dni, name, lastname, address, os_cuit, carnet_number, os_id.ToString(), idCustomer);
                     list_customer();
                 }
                 catch (Exception ex)
@@ -48,6 +71,7 @@ namespace Vistas
                     MessageBox.Show("No se puede editar estos datos: " + ex.Message);
                 }
             }
+
             customerDataGrid.ClearSelection();
             dniBox.Text = "";
             nameBox.Text = "";

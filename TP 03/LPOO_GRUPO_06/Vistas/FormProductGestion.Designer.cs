@@ -62,7 +62,7 @@
             this.Guardar.Location = new System.Drawing.Point(726, 403);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(213, 33);
-            this.Guardar.TabIndex = 1;
+            this.Guardar.TabIndex = 4;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = true;
             this.Guardar.Click += new System.EventHandler(this.handleSaveProduct);
@@ -73,14 +73,14 @@
             this.categoriesBox.Location = new System.Drawing.Point(765, 121);
             this.categoriesBox.Name = "categoriesBox";
             this.categoriesBox.Size = new System.Drawing.Size(199, 28);
-            this.categoriesBox.TabIndex = 3;
+            this.categoriesBox.TabIndex = 1;
             // 
             // DescripcionBox
             // 
             this.DescripcionBox.Location = new System.Drawing.Point(765, 176);
             this.DescripcionBox.Name = "DescripcionBox";
             this.DescripcionBox.Size = new System.Drawing.Size(199, 26);
-            this.DescripcionBox.TabIndex = 4;
+            this.DescripcionBox.TabIndex = 2;
             // 
             // priceBox
             // 
@@ -92,7 +92,7 @@
             0});
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(191, 26);
-            this.priceBox.TabIndex = 6;
+            this.priceBox.TabIndex = 3;
             // 
             // keyProductBox
             // 
@@ -104,7 +104,7 @@
             0});
             this.keyProductBox.Name = "keyProductBox";
             this.keyProductBox.Size = new System.Drawing.Size(191, 26);
-            this.keyProductBox.TabIndex = 9;
+            this.keyProductBox.TabIndex = 0;
             // 
             // Codigo
             // 
@@ -158,7 +158,7 @@
             this.button2.Location = new System.Drawing.Point(251, 463);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(213, 33);
-            this.button2.TabIndex = 15;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Editar O Borrar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.handleEditVisible);

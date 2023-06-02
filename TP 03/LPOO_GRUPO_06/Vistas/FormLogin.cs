@@ -35,9 +35,27 @@ namespace Vistas
             if( user != null  ){
                 FormMain frmMain = new FormMain(user);
                 frmMain.Show();
+                this.Hide();
+
             }else{
                 MessageBox.Show("Datos Incorrectos!");
             }
+
+        }
+
+        private void mouseHover(object sender, EventArgs e)
+        {
+            buttonSubmit.Cursor = Cursors.Hand;
+        }
+
+        private void mouseLeave(object sender, EventArgs e)
+        {
+            buttonSubmit.Cursor = Cursors.Default; ;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

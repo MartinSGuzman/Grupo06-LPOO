@@ -22,7 +22,7 @@ namespace Vistas
         {
             InitializeComponent();
             this.user = usuario;
-            Console.WriteLine(user.User_username);
+            Console.WriteLine("USUARIO CONECTADO: "+ user.User_username);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -54,33 +54,68 @@ namespace Vistas
 
         }
         private void handleSaveUser(object sender, EventArgs e)
+           
         {
+            
             if(editar == false){
-            Console.WriteLine("ROL pasa por acaaa: ", rolBox.SelectedValue);
-            Usuario user = new Usuario();
-            user.Rol_id = (int)rolBox.SelectedValue;
-            user.User = userbox.Text;
-            user.User_username = username_box.Text;
-            user.User_password = password_box.Text;
-            LogicaUsuario.save_user(user);
+                int rol_id = (int)rolBox.SelectedValue;
+                string user = userbox.Text;
+                string username = username_box.Text;
+                string password = password_box.Text;
+                if (user == "" && username == "" && password == "")
+                {
+
+                    MessageBox.Show("COMPLETA TODOS LOS CAMPOS", "ERROR AL GUARDAR USUARIO", MessageBoxButtons.OKCancel);
+                }
+                else { 
+                
+            string message = string.Format("Rol: {0}\nUsuario: {1}\nNombre de usuario: {2}\nContraseña: {3}", rolBox.Text, user, username, password);
+
+        DialogResult result = MessageBox.Show(message, "Confirmar Guardar", MessageBoxButtons.OKCancel);
+
+        if (result == DialogResult.OK)
+        {
+            Usuario newUser = new Usuario();
+            newUser.Rol_id = rol_id;
+            newUser.User = user;
+            newUser.User_username = username;
+            newUser.User_password = password;
+            LogicaUsuario.save_user(newUser);
+
             editar = false;
             list_user();
+        }
+            //LogicaUsuario.save_user(user);
+            //editar = false;
+            //list_user();
 
+            }
             }
 
             if (editar == true) {
-                Console.WriteLine("ROLBOX NATES DE ENTRAR AL EDITAR TRY: " + rolBox.SelectedIndex);
-                int rol = rolBox.SelectedIndex + 1;
-                try {
-                    LogicaUsuario.edit_user(userbox.Text, password_box.Text, username_box.Text, rol.ToString(), idUser);
-                    datagridusers.ClearSelection();
-                    editar = false;
-                    list_user();
-                }
-                catch (Exception ex)
+                int rol_id = (int)rolBox.SelectedValue;
+                string user = userbox.Text;
+                string username = username_box.Text;
+                string password = password_box.Text;
+                string message = string.Format("Rol: {0}\nUsuario: {1}\nNombre de usuario: {2}\nContraseña: {3}", rolBox.Text, user, username, password);
+
+                DialogResult result = MessageBox.Show(message, "Confirmar Edicion", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("No se puede editar estos datos: " + ex.Message);
+                    int rol = (int)((DataRowView)rolBox.SelectedItem)[rolBox.ValueMember];
+                    try
+                    {
+                        LogicaUsuario.edit_user(userbox.Text, password_box.Text, username_box.Text, rol.ToString(), idUser);
+                        datagridusers.ClearSelection();
+                        editar = false;
+                        list_user();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se puede editar estos datos: " + ex.Message);
+                    }
                 }
+               
             }
             userbox.Text = "";
             password_box.Text = "";
@@ -119,9 +154,15 @@ namespace Vistas
             saveButton.Enabled = false;
             if (datagridusers.CurrentRow != null)
             {
+                DialogResult result = MessageBox.Show("Eliminar Usuario?", "Confirmar Eliminacion", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                { 
+                
                 idUser = datagridusers.CurrentRow.Cells["ID"].Value.ToString();
                 LogicaUsuario.deleteUser(idUser);
                 list_user();
+                }
+
             }
             else {
                 MessageBox.Show("SLECICONE UN USUARIO!");

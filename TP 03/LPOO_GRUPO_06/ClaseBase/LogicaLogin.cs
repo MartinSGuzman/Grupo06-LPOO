@@ -24,7 +24,7 @@ namespace ClaseBase
             {
                 DataRow row = dt.Rows[0];
                 found.Rol_id = (int)row["rol_id"];
-                found.User = row["username"].ToString();
+                found.User = row["fullname"].ToString();
                 found.User_username = row["user_username"].ToString();
                 found.User_password = row["user_password"].ToString();
                 return found;

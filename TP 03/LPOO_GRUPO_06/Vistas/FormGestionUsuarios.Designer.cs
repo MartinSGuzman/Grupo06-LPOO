@@ -63,7 +63,7 @@
             this.rolBox.Location = new System.Drawing.Point(656, 88);
             this.rolBox.Name = "rolBox";
             this.rolBox.Size = new System.Drawing.Size(226, 28);
-            this.rolBox.TabIndex = 1;
+            this.rolBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -79,31 +79,31 @@
             this.username_box.Location = new System.Drawing.Point(654, 189);
             this.username_box.Name = "username_box";
             this.username_box.Size = new System.Drawing.Size(227, 26);
-            this.username_box.TabIndex = 3;
+            this.username_box.TabIndex = 2;
             // 
             // password_box
             // 
             this.password_box.Location = new System.Drawing.Point(656, 249);
             this.password_box.Name = "password_box";
             this.password_box.Size = new System.Drawing.Size(227, 26);
-            this.password_box.TabIndex = 4;
+            this.password_box.TabIndex = 3;
             // 
             // userbox
             // 
             this.userbox.Location = new System.Drawing.Point(654, 134);
             this.userbox.Name = "userbox";
             this.userbox.Size = new System.Drawing.Size(227, 26);
-            this.userbox.TabIndex = 5;
+            this.userbox.TabIndex = 1;
             this.userbox.TextChanged += new System.EventHandler(this.user_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(524, 140);
+            this.label3.Location = new System.Drawing.Point(580, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Nombre Usuario";
+            this.label3.Text = "Nombre";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
@@ -129,7 +129,7 @@
             this.saveButton.Location = new System.Drawing.Point(575, 310);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(307, 34);
-            this.saveButton.TabIndex = 9;
+            this.saveButton.TabIndex = 4;
             this.saveButton.Text = "Guardar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.handleSaveUser);
@@ -168,7 +168,7 @@
             this.borraruser.Location = new System.Drawing.Point(22, 350);
             this.borraruser.Name = "borraruser";
             this.borraruser.Size = new System.Drawing.Size(123, 34);
-            this.borraruser.TabIndex = 13;
+            this.borraruser.TabIndex = 7;
             this.borraruser.Text = "Borrar";
             this.borraruser.UseVisualStyleBackColor = true;
             this.borraruser.Visible = false;
@@ -179,7 +179,7 @@
             this.button2.Location = new System.Drawing.Point(168, 350);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 34);
-            this.button2.TabIndex = 14;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Editar O Borrar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.handleEditVisible);
@@ -189,7 +189,7 @@
             this.EditButton.Location = new System.Drawing.Point(324, 350);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(132, 34);
-            this.EditButton.TabIndex = 15;
+            this.EditButton.TabIndex = 5;
             this.EditButton.Text = "cancelar";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Visible = false;
