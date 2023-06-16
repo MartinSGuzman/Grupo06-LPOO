@@ -10,7 +10,7 @@ namespace ClaseBase
     public class LogicaCliente
     {
         public static DataTable list_customer() {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "Select id as 'ID', dni as 'DNI', name as 'Nombre', lastname as 'Apellido', address as 'Direccion', os_cuit as 'Obra Social CUIT', carnet_number as 'Numero de carnet' from Cliente";
             cmd.CommandType = CommandType.Text;
@@ -23,7 +23,7 @@ namespace ClaseBase
             return datatable;
         }
         public static DataTable list_customerBox() {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "Select id, name from Cliente";
             cmd.CommandType = CommandType.Text;
@@ -37,7 +37,7 @@ namespace ClaseBase
         }
         public static void save_customer(Cliente client)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO Cliente(dni, name, lastname, address, os_cuit, carnet_number, os_id) values(@dniBox, @nameBox, @lastnameBox, @addressBox, @os_cuitBox, @carnet_numberBox, @os_id)";
             cmd.CommandType = CommandType.Text;
@@ -56,7 +56,7 @@ namespace ClaseBase
         }
         public static Cliente find_customer(string dni)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "select * from Cliente where id like @id ";
@@ -85,7 +85,7 @@ namespace ClaseBase
         }
 
         public static DataTable order_byLastName() {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "Select dni as 'DNI', name as 'Nombre', lastname as 'Apellido', address as 'Direccion', os_cuit as 'Obra Social CUIT', carnet_number as 'Numero de carnet' from Cliente order by lastname";
             cmd.CommandType = CommandType.Text;
@@ -99,7 +99,7 @@ namespace ClaseBase
         }
         public static void edit_customer(string dni,string name ,string lastname, string address, string os_cuit, string carnet_number, string os_id, string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "UPDATE Cliente SET dni = @dni, name = @name ,lastname = @lastname, address = @address, os_cuit = @os_cuit, carnet_number = @carnet_number, os_id = @os_id WHERE id = @id";
@@ -121,7 +121,7 @@ namespace ClaseBase
         }
         public static void delete_customer(string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "DELETE FROM Cliente WHERE id = @id";
@@ -136,7 +136,7 @@ namespace ClaseBase
         }
         public static DataTable filter_byProducts(string date2)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "GetProductSellByClient";
             cmd.CommandType = CommandType.StoredProcedure;

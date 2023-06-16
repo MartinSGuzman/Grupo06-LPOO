@@ -10,7 +10,7 @@ namespace ClaseBase
     {
         public static DataTable list_ventas()
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "select date as 'Fecha', dni_customer as 'Cliente DNI' from Venta ";
             cmd.CommandType = CommandType.Text;
@@ -24,7 +24,7 @@ namespace ClaseBase
 
         public static int save_venta(VentaReal vent)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             cnn.Open();
 
             string query1 = "INSERT INTO Venta (date, dni_customer) VALUES (@date, @dni); SELECT SCOPE_IDENTITY();";
@@ -41,7 +41,7 @@ namespace ClaseBase
         }
         public static void save_ventaDetalle(Venta vent)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             cnn.Open();
 
             string query1 = "INSERT INTO VentaDetalle (sale_number, product_number, price, cant, total) VALUES (@sale_number, @product_number, @price, @cant, @total );";
@@ -58,7 +58,7 @@ namespace ClaseBase
 
         public static void put_ventaDetalle(int id, string dni)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             cnn.Open();
 
             string query1 = "UPDATE Venta SET dni_customer = @dni WHERE id = @id;";
@@ -71,7 +71,7 @@ namespace ClaseBase
         }
         public static DataTable list_cart(int id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "select sale_number as 'VENTA NRO', product_number as 'PRODUCTO NRO DNI', price as 'PRECIO', cant AS 'CANTIDAD',  total AS 'TOTAL' from VentaDetalle where sale_number like @id ";
             cmd.Parameters.AddWithValue("@id", id);
@@ -85,7 +85,7 @@ namespace ClaseBase
 
         public static DataTable filter_by_customer(string category)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "select date as 'Fecha', dni_customer as 'Cliente DNI' from Venta where dni_customer like @category";
             cmd.CommandType = CommandType.Text;
@@ -100,7 +100,7 @@ namespace ClaseBase
 
         public static DataTable filter_by_product(int id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT Venta.date AS 'Fecha', Venta.dni_customer AS 'Cliente DNI' " +
                       "FROM Venta " +
@@ -116,7 +116,7 @@ namespace ClaseBase
         }
 
         public static DataTable filter_byDate(DateTime date1, DateTime date2) {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "GetSalesDateRange";
             cmd.CommandType = CommandType.StoredProcedure;

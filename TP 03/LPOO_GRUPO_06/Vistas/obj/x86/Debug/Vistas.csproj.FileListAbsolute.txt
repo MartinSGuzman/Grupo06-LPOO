@@ -58,3 +58,5 @@ C:\Users\Nico\Documents\LPOOOOOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas
 C:\Users\Nico\Documents\LPOOOOOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
 C:\Users\Nico\Documents\LPOOOOOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.exe.manifest
 C:\Users\Nico\Documents\LPOOOOOO\TP 03\LPOO_GRUPO_06\Vistas\obj\x86\Debug\Vistas.application
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\bin\Debug\nuevaOpticaDB.mdf
+C:\Users\Nico\Documents\Grupo06-LPOO\TP 03\LPOO_GRUPO_06\Vistas\bin\Debug\nuevaOpticaDB_log.ldf

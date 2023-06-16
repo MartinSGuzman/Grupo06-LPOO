@@ -11,7 +11,7 @@ namespace ClaseBase
     {
         public static DataTable list_categories()
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "select * from Category";
@@ -26,7 +26,7 @@ namespace ClaseBase
         }
         public static void save_category(Category newp)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "INSERT INTO Category(category_desc) values(@categoriesBox)";
@@ -41,7 +41,7 @@ namespace ClaseBase
         }
         public static void edit_category(string categoriesBox, string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "UPDATE Category SET category_desc = @categoriesBox WHERE id_category = @id";
@@ -58,7 +58,7 @@ namespace ClaseBase
         }
         public static void delete_category(string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "DELETE FROM Category WHERE id_category = @id";

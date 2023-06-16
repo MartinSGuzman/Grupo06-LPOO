@@ -9,7 +9,7 @@ namespace ClaseBase
     public class LogicaProducto
     {
         public static void save_product(Producto newp) { 
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "INSERT INTO Producto(key_product, category, description, price) values(@keyProductBox, @categoriesBox, @descripcionBox, @priceBox)";
@@ -27,7 +27,7 @@ namespace ClaseBase
         }
         
         public static DataTable list_productsBox() {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "select id, description from Producto";
@@ -43,7 +43,7 @@ namespace ClaseBase
 
         
         public static void edit_product(string keyProductBox, string categoriesBox, string priceBox, string DescripcionBox, string id) {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "UPDATE Producto SET key_product = @keyProductBox, category = @categoriesBox, description = @descripcionBox, price = @priceBox WHERE id = @id";
@@ -63,7 +63,7 @@ namespace ClaseBase
         }
         public static DataTable list_products()
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "select id as 'ID', key_product as 'COD PRODUCTO', description as 'Descripcion', category as 'categoria', price as 'Precio' from Producto";
@@ -78,7 +78,7 @@ namespace ClaseBase
         }
         public static DataTable filter_byCateory(string category)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "select key_product as 'COD PRODUCTO', description as 'Descripcion', category as 'categoria', price as 'Precio' from Producto where category like @category";
@@ -94,7 +94,7 @@ namespace ClaseBase
             return dt;
         }
         public static Producto find_product(string id) {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * from Producto WHERE id like @id";
             cmd.CommandType = CommandType.Text;
@@ -118,7 +118,7 @@ namespace ClaseBase
         }
         public static void deleteProduct(string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "DELETE FROM Producto WHERE id = @id";

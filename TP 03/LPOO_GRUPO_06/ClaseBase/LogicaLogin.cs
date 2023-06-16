@@ -9,7 +9,7 @@ namespace ClaseBase
     public class LogicaLogin
     {
         public static Usuario handle_login(string username, string password) {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             cnn.Open();
 
             string query = "SELECT * FROM Usuarios WHERE user_username = @nombreUsuario AND user_password = @contraseña";

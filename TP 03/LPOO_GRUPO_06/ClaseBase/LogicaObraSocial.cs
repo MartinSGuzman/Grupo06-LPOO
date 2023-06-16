@@ -9,7 +9,7 @@ namespace ClaseBase
     public class LogicaObraSocial
     {
         public static DataTable list_obraSocial() {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "SELECT id, os_razon from ObraSocial";
@@ -26,7 +26,7 @@ namespace ClaseBase
         }
         public static DataTable list_obraSocials()
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "SELECT id as 'ID', os_razon as 'RAZON SOCIAL', os_phone as 'TELEFONO', os_address as 'DIRECCION', os_number as 'Nro' from ObraSocial";
@@ -43,7 +43,7 @@ namespace ClaseBase
         }
         public static void save_obrasocial(ObraSocial newp)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "INSERT INTO ObraSocial(os_number, os_razon, os_address, os_phone) values(@os_number, @os_razon, @os_address, @os_phone)";
@@ -60,7 +60,7 @@ namespace ClaseBase
         }
         public static void edit_obraSocial(string os_number, string os_address, string os_phone, string os_razon, string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "UPDATE ObraSocial SET os_number = @os_number, os_address = @os_address, os_phone = @os_phone, os_razon = @os_razon WHERE id = @id";
@@ -80,7 +80,7 @@ namespace ClaseBase
         }
         public static void delete_obraSocial(string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "DELETE FROM ObraSocial WHERE id = @id";
@@ -95,7 +95,7 @@ namespace ClaseBase
         }
         public static ObraSocial find_obraSocial(string id)
         {
-            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.opticaConnectionString2);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * from ObraSocial WHERE id like @id";
             cmd.CommandType = CommandType.Text;
